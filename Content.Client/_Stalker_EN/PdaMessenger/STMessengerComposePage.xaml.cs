@@ -68,7 +68,7 @@ public sealed partial class STMessengerComposePage : BoxContainer
         };
     }
 
-    public void Setup(string chatId, uint? replyToId, string? replySnippet)
+    public void Setup(string chatId, uint? replyToId, string? replySnippet, string? displayName = null)
     {
         _chatId = chatId;
         _isDmChat = chatId.StartsWith(STMessengerChat.DmChatPrefix, StringComparison.Ordinal);
@@ -84,7 +84,8 @@ public sealed partial class STMessengerComposePage : BoxContainer
 
         if (_isDmChat)
         {
-            RecipientLabel.Text = chatId[STMessengerChat.DmChatPrefix.Length..];
+            // Use the display name (character name) if available, otherwise fall back to messenger ID from chat ID
+            RecipientLabel.Text = displayName ?? chatId[STMessengerChat.DmChatPrefix.Length..];
         }
         else
         {

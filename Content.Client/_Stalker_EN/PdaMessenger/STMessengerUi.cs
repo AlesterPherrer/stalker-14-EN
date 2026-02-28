@@ -23,6 +23,11 @@ public sealed partial class STMessengerUi : UIFragment
     private uint? _replyToId;
     private string? _replySnippet;
 
+    /// <summary>
+    /// Maps DM chat ID → display name (character name) for the compose page.
+    /// </summary>
+    private readonly Dictionary<string, string> _chatDisplayNames = new();
+
     public override Control GetUIFragmentRoot()
     {
         return _root!;
@@ -58,9 +63,9 @@ public sealed partial class STMessengerUi : UIFragment
             userInterface.SendMessage(new CartridgeUiMessage(new STMessengerAddContactEvent(messengerId)));
         };
 
-        _mainPage.OnRemoveContact += contactName =>
+        _mainPage.OnRemoveContact += contactMessengerId =>
         {
-            userInterface.SendMessage(new CartridgeUiMessage(new STMessengerRemoveContactEvent(contactName)));
+            userInterface.SendMessage(new CartridgeUiMessage(new STMessengerRemoveContactEvent(contactMessengerId)));
         };
 
         _mainPage.OnToggleMute += channelId =>
@@ -113,6 +118,23 @@ public sealed partial class STMessengerUi : UIFragment
         if (state is not STMessengerUiState messengerState)
             return;
 
+        // Deep-link from external systems (e.g. merc board Contact button)
+        if (messengerState.NavigateToChatId is not null && _currentChatId != messengerState.NavigateToChatId)
+        {
+            _currentChatId = messengerState.NavigateToChatId;
+            _mainPage!.Visible = false;
+            _composePage!.Visible = false;
+            _channelPage!.Visible = true;
+            _channelPage.SetChatId(messengerState.NavigateToChatId);
+            // Fall through — server already set viewed chat and included messages in this state
+        }
+
+        _chatDisplayNames.Clear();
+        foreach (var dm in messengerState.DirectMessages)
+        {
+            _chatDisplayNames[dm.Id] = dm.DisplayName;
+        }
+
         _mainPage?.UpdateState(messengerState);
 
         if (_currentChatId is not null && _channelPage is { Visible: true })
@@ -150,7 +172,10 @@ public sealed partial class STMessengerUi : UIFragment
     {
         _channelPage!.Visible = false;
         _composePage!.Visible = true;
-        _composePage.Setup(chatId, _replyToId, _replySnippet);
+
+        // For DM chats, pass the display name (character name) to the compose page
+        _chatDisplayNames.TryGetValue(chatId, out var displayName);
+        _composePage.Setup(chatId, _replyToId, _replySnippet, displayName);
     }
 
     private static STMessengerChat? FindChat(STMessengerUiState state, string chatId)

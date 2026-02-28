@@ -32,15 +32,24 @@ public sealed class STMessengerUiState : BoundUserInterfaceState
     /// </summary>
     public readonly List<STMessengerContactInfo> Contacts;
 
+    /// <summary>
+    /// When set, the client should auto-navigate to this chat ID.
+    /// Used by external systems (e.g. merc board) to deep-link into a DM.
+    /// Null means no navigation requested.
+    /// </summary>
+    public readonly string? NavigateToChatId;
+
     public STMessengerUiState(
         string messengerId,
         List<STMessengerChat> channels,
         List<STMessengerChat> directMessages,
-        List<STMessengerContactInfo> contacts)
+        List<STMessengerContactInfo> contacts,
+        string? navigateToChatId = null)
     {
         MessengerId = messengerId;
         Channels = channels;
         DirectMessages = directMessages;
         Contacts = contacts;
+        NavigateToChatId = navigateToChatId;
     }
 }

@@ -15,9 +15,3 @@
   name: st-messenger-channel-trading
   color: "#CCAA44"
   sortOrder: 2
-
-- type: stMessengerChannel
-  id: STJobs
-  name: st-messenger-channel-jobs
-  color: "#4488CC"
-  sortOrder: 3
