@@ -909,5 +909,12 @@
   id: 103
   time: '2026-03-01T02:26:52.253627+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/549
+- author: Roland410
+  changes:
+  - message: Adds lights to Neutral jail
+    type: Fix
+  id: 104
+  time: '2026-03-01T14:48:45.807141+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/553
 Name: Stalker
 Order: -1
