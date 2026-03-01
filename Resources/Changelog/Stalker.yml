@@ -899,5 +899,15 @@
   id: 102
   time: '2026-03-01T02:25:51.357750+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/551
+- author: LaCumbiaDelCoronavirus
+  changes:
+  - message: Ruplidets trader is now locked behind renegade-access doors.
+    type: Tweak
+  - message: Sacrifices into ritualpit now only play a sound for everyone on the same
+      map.
+    type: Tweak
+  id: 103
+  time: '2026-03-01T02:26:52.253627+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/549
 Name: Stalker
 Order: -1
