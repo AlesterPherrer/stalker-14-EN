@@ -183,7 +183,7 @@
     damage:
       types:
         Piercing: 2
-        Mutant: 35 # might be low tbh
+        Mutant: 55 # this one is just right?
 
 - type: entity
   id: BulletShotgunToxicShard

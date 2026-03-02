@@ -51,7 +51,7 @@
     radius: 4.5
     energy: 6
     color: "#FF893B"
-    castShadows: false
+    castShadows: true
     netsync: false
     mask: /Textures/_Stalker_EN/Effects/LightMasks/disco.png
   - type: RotatingLight

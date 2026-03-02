@@ -68,9 +68,9 @@
     MutantPartOldBoarHoof: 545 # T3
 
     #Bears ---------
-    MutantPartBearClaw: 230
-    MutantPartBearPaw: 445
-    MutantPartBearEye: 675
+    MutantPartBearClaw: 250
+    MutantPartBearPaw: 485
+    MutantPartBearEye: 695
     ClothingHeadBear: 800
 
     #T1 -------- Health * 1
