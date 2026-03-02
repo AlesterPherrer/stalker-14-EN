@@ -1002,5 +1002,14 @@
   id: 109
   time: '2026-03-01T16:17:04.023469+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/557
+- author: crocodilecarousel
+  changes:
+  - message: Bear claws are worth slightly more
+    type: Tweak
+  - message: Journalists start with a TT
+    type: Tweak
+  id: 110
+  time: '2026-03-02T04:07:02.886148+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/560
 Name: Stalker
 Order: -1
