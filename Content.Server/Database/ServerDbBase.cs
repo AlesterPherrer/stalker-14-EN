@@ -2167,6 +2167,158 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.StalkerFactionRelationProposals.ExecuteDeleteAsync();
         }
 
+        // stalker-en-changes: Messenger ID + Contact persistence (keyed by userId + characterName)
+        public async Task<List<StalkerMessengerId>> GetAllStalkerMessengerIdsAsync()
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.StalkerMessengerIds.ToListAsync();
+        }
+
+        public async Task<StalkerMessengerId?> GetStalkerMessengerIdAsync(Guid userId, string characterName)
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.StalkerMessengerIds
+                .FirstOrDefaultAsync(m => m.UserId == userId && m.CharacterName == characterName);
+        }
+
+        public async Task SetStalkerMessengerIdAsync(Guid userId, string characterName, string messengerId)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.StalkerMessengerIds
+                .FirstOrDefaultAsync(m => m.UserId == userId && m.CharacterName == characterName);
+
+            if (record is null)
+            {
+                db.DbContext.StalkerMessengerIds.Add(new StalkerMessengerId
+                {
+                    UserId = userId,
+                    CharacterName = characterName,
+                    MessengerId = messengerId,
+                });
+            }
+            else
+            {
+                record.MessengerId = messengerId;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<List<StalkerMessengerContact>> GetStalkerMessengerContactsAsync(Guid ownerUserId, string ownerName)
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.StalkerMessengerContacts
+                .Where(c => c.OwnerUserId == ownerUserId && c.OwnerCharacterName == ownerName)
+                .ToListAsync();
+        }
+
+        // stalker-en-changes
+        public async Task AddStalkerMessengerContactAsync(Guid ownerUserId, string ownerName, Guid contactUserId, string contactName, string? factionName = null)
+        {
+            await using var db = await GetDb();
+
+            var exists = await db.DbContext.StalkerMessengerContacts
+                .AnyAsync(c => c.OwnerUserId == ownerUserId
+                    && c.OwnerCharacterName == ownerName
+                    && c.ContactUserId == contactUserId
+                    && c.ContactCharacterName == contactName);
+
+            if (!exists)
+            {
+                db.DbContext.StalkerMessengerContacts.Add(new StalkerMessengerContact
+                {
+                    OwnerUserId = ownerUserId,
+                    OwnerCharacterName = ownerName,
+                    ContactUserId = contactUserId,
+                    ContactCharacterName = contactName,
+                    FactionName = factionName,
+                });
+                await db.DbContext.SaveChangesAsync();
+            }
+        }
+
+        // stalker-en-changes
+        public async Task UpdateStalkerMessengerContactFactionAsync(Guid ownerUserId, string ownerName, Guid contactUserId, string contactName, string factionName)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.StalkerMessengerContacts
+                .FirstOrDefaultAsync(c => c.OwnerUserId == ownerUserId
+                    && c.OwnerCharacterName == ownerName
+                    && c.ContactUserId == contactUserId
+                    && c.ContactCharacterName == contactName);
+
+            if (record != null)
+            {
+                record.FactionName = factionName;
+                await db.DbContext.SaveChangesAsync();
+            }
+        }
+
+        public async Task RemoveStalkerMessengerContactAsync(Guid ownerUserId, string ownerName, Guid contactUserId, string contactName)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.StalkerMessengerContacts
+                .FirstOrDefaultAsync(c => c.OwnerUserId == ownerUserId
+                    && c.OwnerCharacterName == ownerName
+                    && c.ContactUserId == contactUserId
+                    && c.ContactCharacterName == contactName);
+
+            if (record != null)
+            {
+                db.DbContext.StalkerMessengerContacts.Remove(record);
+                await db.DbContext.SaveChangesAsync();
+            }
+        }
+
+        // stalker-en-changes: PDA password persistence
+        public async Task<StalkerPdaPassword?> GetStalkerPdaPasswordAsync(string characterName)
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.StalkerPdaPasswords
+                .FirstOrDefaultAsync(p => p.CharacterName == characterName);
+        }
+
+        public async Task SetStalkerPdaPasswordAsync(string characterName, string password)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.StalkerPdaPasswords
+                .FirstOrDefaultAsync(p => p.CharacterName == characterName);
+
+            if (record is null)
+            {
+                db.DbContext.StalkerPdaPasswords.Add(new StalkerPdaPassword
+                {
+                    CharacterName = characterName,
+                    Password = password,
+                });
+            }
+            else
+            {
+                record.Password = password;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task RemoveStalkerPdaPasswordAsync(string characterName)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.StalkerPdaPasswords
+                .FirstOrDefaultAsync(p => p.CharacterName == characterName);
+
+            if (record != null)
+            {
+                db.DbContext.StalkerPdaPasswords.Remove(record);
+                await db.DbContext.SaveChangesAsync();
+            }
+        }
+        // stalker-en-changes-end
+
         #endregion
         #region Job Whitelists
 

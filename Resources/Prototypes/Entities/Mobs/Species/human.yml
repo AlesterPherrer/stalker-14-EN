@@ -39,9 +39,15 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Inventory
+    templateId: STMain #Stalker EN
     femaleDisplacements:
-      jumpsuit:
+      torso:
         sizeMaps:
           32:
             sprite: Mobs/Species/Human/displacement.rsi
-            state: jumpsuit-female
+            state: torso-female
+      legs:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: legs-female

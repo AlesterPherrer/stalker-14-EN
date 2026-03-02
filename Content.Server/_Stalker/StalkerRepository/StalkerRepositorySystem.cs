@@ -236,8 +236,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         if (!_ui.TryOpenUi(repository, StalkerRepositoryUiKey.Key, user.Value))
             return;
 
-        var items = component.ContainedItems;
-        _ui.SetUiState(repository, StalkerRepositoryUiKey.Key, new RepositoryUpdateState(items, userItems, component.MaxWeight));
+        _ui.SetUiState(repository, StalkerRepositoryUiKey.Key, new RepositoryUpdateState(component.ContainedItems, userItems, component.MaxWeight));
     }
 
     private void OnRequestUpdate(EntityUid uid, StalkerRepositoryComponent component,
@@ -749,6 +748,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
         if (playerItem == null)
             return null;
+
         // if we dont have containerManager we don't need to insert it recursively
         if (!TryComp<ContainerManagerComponent>(playerItem, out var containerMan))
         {

@@ -67,7 +67,7 @@
     MutantPartSeasonedBoarHoof: 460 # T2
     MutantPartOldBoarHoof: 690 # T3
     # Bears --------- EN addition
-    MutantPartBearClaw: 325
+    MutantPartBearClaw: 405
     MutantPartBearPaw: 575
     MutantPartBearEye: 900
     ClothingHeadBear: 600
