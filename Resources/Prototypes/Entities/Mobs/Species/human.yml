@@ -40,14 +40,6 @@
   components:
   - type: Inventory
     templateId: STMain #Stalker EN
-    femaleDisplacements:
-      torso:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: torso-female
-      legs:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Human/displacement.rsi
-            state: legs-female
+    # To add femaleDisplacements for torso/legs slots, create torso-female and
+    # legs-female states in Textures/Mobs/Species/Human/displacement.rsi
+    # At least check your changes in game before you decide to pr stuff (╯°□°)╯︵ ┻━┻
