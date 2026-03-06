@@ -1166,5 +1166,28 @@
   id: 127
   time: '2026-03-06T11:49:43.779282+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/587
+- author: teecoding
+  changes:
+  - message: News cartridge PDA program for reading and publishing Zone news
+    type: Add
+  - message: Journalists can write and publish news articles visible to all stalkers
+    type: Add
+  - message: News articles persist across rounds
+    type: Add
+  - message: Clickable news links in messenger chat via [NEWS#id] format
+    type: Add
+  - message: Copy Link button to share articles in messenger
+    type: Add
+  - message: Search bar to filter news by title or author
+    type: Add
+  - message: New article notifications with PDA ringtone
+    type: Add
+  - message: Embed color picker for article styling
+    type: Add
+  - message: Discord webhook for published articles
+    type: Add
+  id: 128
+  time: '2026-03-06T20:00:33.225916+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/590
 Name: Stalker
 Order: -1
