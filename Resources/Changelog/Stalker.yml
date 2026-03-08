@@ -1233,5 +1233,12 @@
   id: 132
   time: '2026-03-06T21:31:16.210684+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/593
+- author: King-spin
+  changes:
+  - message: Sound to t2 springboards
+    type: Add
+  id: 133
+  time: '2026-03-08T10:23:12.931612+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/597
 Name: Stalker
 Order: -1
