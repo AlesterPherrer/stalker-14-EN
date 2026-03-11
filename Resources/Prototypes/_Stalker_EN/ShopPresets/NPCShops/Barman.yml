@@ -86,16 +86,16 @@
     MutantPartPsiDogTail: 475
     MutantPartFrogLeg: 300
 
-    #T3 -------- PENDING REWORK
-    MutantPartBloodsuckerTentacles: 865
-    MutantPartOraculeEye: 950
-    MutantPartZombieHand: 690
-    MutantPartPseudogiantHeart: 4600
+    #T3 -------- PENDING REWORK Modified by Oracle
+    MutantPartBloodsuckerTentacles: 2750
+    MutantPartOraculeEye: 1800
+    MutantPartZombieHand: 1000
+    MutantPartPseudogiantHeart: 9050
     ClothingMaskChimera: 1
     MutantPartChimeraTooth: 1
-    MutantPartIzlomArm: 865
+    MutantPartIzlomArm: 1650
     MutantPartBurerBrain: 2000
-    MutantPartControllerBrain: 3500
+    MutantPartControllerBrain: 3000
 
     # Meat
     STFoodMeatSalo: 95

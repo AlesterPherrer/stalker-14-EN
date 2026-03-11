@@ -86,14 +86,14 @@
     MutantPartPsiDogTail: 400
     MutantPartFrogLeg: 200
 
-    #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 715
-    MutantPartOraculeEye: 800
+    #T3 -------- Health * 3 Modified by Oracle
+    MutantPartBloodsuckerTentacles: 1375
+    MutantPartOraculeEye: 1050
     MutantPartZombieHand: 570
-    MutantPartPseudogiantHeart: 3800
+    MutantPartPseudogiantHeart: 6800
     ClothingMaskChimera: 1
     MutantPartChimeraTooth: 1
-    MutantPartIzlomArm: 715
+    MutantPartIzlomArm: 815
     MutantPartBurerBrain: 1500
     MutantPartControllerBrain: 2625
 
