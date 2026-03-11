@@ -219,6 +219,7 @@
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltWebbingHolsterFreedomDefender: 600
+        ClothingBeltWebbingDoubleFreedomVeterSmall: 1000
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8
