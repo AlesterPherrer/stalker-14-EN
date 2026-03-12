@@ -381,3 +381,37 @@
       weight: 1
     - protoId: ZoneAnomalyVortex
       weight: 0.7
+
+# Jupiter Plant - Stalker EN
+- type: stAnomalyGenerationOptions
+  id: STJupiterPlantGenerationOptions
+  options:
+    totalCount: 300
+    anomalyEntries:
+    - protoId: ZoneAnomalyKissel
+      weight: 1.5
+    - protoId: ZoneAnomalyNoGravity
+    - protoId: ZoneAnomalyElectra
+    - protoId: ZoneAnomalyGravi
+    - protoId: ZoneAnomalySpringboard
+    - protoId: ZoneAnomalyLamp
+    - protoId: ZoneAnomalyJarka
+    - protoId: ZoneAnomalyGazirovka
+    - protoId: ZoneAnomalyBarabashka
+    - protoId: ZoneAnomalySmoke
+    - protoId: ZoneAnomalySource
+      weight: 0.5
+    - protoId: ZoneAnomalyGrabber
+    - protoId: ZoneAnomalySteam
+    - protoId: ZoneAnomalySol
+      weight: 0.5
+    - protoId: ZoneAnomalyRift
+      weight: 0.5
+    #-PIVO-UPDATE-
+    - protoId: ZoneAnomalyBeer
+      weight: 0.5
+    # Gravity
+    - protoId: ZoneAnomalyGlassShards
+      weight: 0.5
+    - protoId: ZoneAnomalyVortex
+      weight: 0.6
