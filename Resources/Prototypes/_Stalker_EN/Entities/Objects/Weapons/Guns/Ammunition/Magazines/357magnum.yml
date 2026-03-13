@@ -1,7 +1,7 @@
 - type: entity
   id: BaseSTSpeedLoader357Magnum
-  name: speedloader (.357 magnum)
-  description: "A tool used to quickly reload a .357 magnum revolver with 8 rounds of capacity."
+  name: Speedloader (.357 Magnum)
+  description: "An empty speedloader for .357 Magnum cartridges."
   suffix: Stalker
   parent: BaseItem
   abstract: true

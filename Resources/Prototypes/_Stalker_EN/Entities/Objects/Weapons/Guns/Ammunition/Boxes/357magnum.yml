@@ -30,7 +30,8 @@
 - type: entity
   parent: BaseMagazineBox357Magnum
   id: MagazineBox357Magnum
-  name: ammunition box (.357 magnum)
+  name: Ammo Box (.357 Magnum) FMJ
+  description: "For revolvers, 30 pieces in a box. Provides penetration of armor class 2."
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
@@ -45,7 +46,8 @@
 - type: entity
   parent: BaseMagazineBox357Magnum
   id: MagazineBox357MagnumHP
-  name: ammunition box (.357 magnum hollow-point)
+  name: Ammo Box (.357 Magnum) HP
+  description: "For revolvers, 30 pieces in a box. Useless against armor."
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
@@ -61,7 +63,8 @@
 - type: entity
   parent: BaseMagazineBox357Magnum
   id: MagazineBox357MagnumAP
-  name: ammunition box (.357 magnum armor-piercing)
+  name: Ammo Box (.357 Magnum) AP
+  description: "For revolvers, 30 pieces in a box. Provides penetration of armor class 3."
   suffix: Stalker
   components:
   - type: BallisticAmmoProvider
