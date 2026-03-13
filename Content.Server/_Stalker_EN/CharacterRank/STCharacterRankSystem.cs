@@ -7,6 +7,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Players.PlayTimeTracking;
+using Robust.Shared.Console;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -447,4 +448,51 @@ public sealed class STCharacterRankSystem : EntitySystem
     /// Returns all configured rank definitions. Used by admin commands for tab-completion.
     /// </summary>
     public IReadOnlyList<STRankDefinition> GetAllRanks() => _config.Ranks;
+
+    /// <summary>
+    /// Transfers accumulated time from an old character name to the currently tracked entity.
+    /// Writes success/failure output to the provided shell.
+    /// </summary>
+    public async void TransferRankAsync(EntityUid uid, string oldCharacterName, string username, IConsoleShell shell)
+    {
+        try
+        {
+            var data = GetTrackingData(uid);
+            if (data == null)
+            {
+                shell.WriteError(Loc.GetString("cmd-strank-error-no-component"));
+                return;
+            }
+
+            var record = await _db.GetStalkerCharacterRankAsync(data.UserId, oldCharacterName);
+
+            if (Deleted(uid))
+                return;
+
+            if (record == null)
+            {
+                shell.WriteError(Loc.GetString("cmd-strank-transfer-not-found", ("oldName", oldCharacterName)));
+                return;
+            }
+
+            if (!TryComp<STCharacterRankComponent>(uid, out var comp))
+                return;
+
+            var newName = data.CharacterName;
+            data.AccumulatedTime = record.TimeSpent;
+            UpdateRank(uid, comp, data);
+            SaveSingleToDb(data);
+
+            shell.WriteLine(Loc.GetString("cmd-strank-transfer-success",
+                ("time", $"{record.TimeSpent.TotalHours:F1}h"),
+                ("oldName", oldCharacterName),
+                ("newName", newName),
+                ("username", username)));
+        }
+        catch (Exception e)
+        {
+            Log.Error($"Failed to transfer rank from {oldCharacterName}: {e}");
+            shell.WriteError($"Transfer failed: {e.Message}");
+        }
+    }
 }

@@ -70,6 +70,57 @@ public sealed class STRankGetCommand : LocalizedCommands
 }
 
 /// <summary>
+/// Transfers accumulated rank hours from an old character name to the player's current character.
+/// </summary>
+[AdminCommand(AdminFlags.Admin)]
+public sealed class STRankTransferCommand : LocalizedCommands
+{
+    [Dependency] private readonly IPlayerManager _players = default!;
+    [Dependency] private readonly IEntityManager _entities = default!;
+
+    public override string Command => "strank_transfer";
+
+    public override void Execute(IConsoleShell shell, string argStr, string[] args)
+    {
+        if (args.Length < 2)
+        {
+            shell.WriteError(Loc.GetString("cmd-strank-error-args"));
+            return;
+        }
+
+        var session = _players.Sessions
+            .FirstOrDefault(s => s.Name.Equals(args[0], StringComparison.OrdinalIgnoreCase));
+
+        if (session?.AttachedEntity is not { } uid)
+        {
+            shell.WriteError(Loc.GetString("cmd-strank-error-no-entity"));
+            return;
+        }
+
+        if (!_entities.HasComponent<STCharacterRankComponent>(uid))
+        {
+            shell.WriteError(Loc.GetString("cmd-strank-error-no-component"));
+            return;
+        }
+
+        var oldCharacterName = string.Join(" ", args[1..]);
+        var rankSystem = _entities.System<STCharacterRankSystem>();
+        rankSystem.TransferRankAsync(uid, oldCharacterName, session.Name, shell);
+    }
+
+    public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        if (args.Length == 1)
+        {
+            var options = _players.Sessions.Select(s => s.Name).OrderBy(s => s);
+            return CompletionResult.FromHintOptions(options, Loc.GetString("cmd-strank_transfer-help"));
+        }
+
+        return CompletionResult.Empty;
+    }
+}
+
+/// <summary>
 /// Sets a player's character rank by name, auto-setting the required hours.
 /// </summary>
 [AdminCommand(AdminFlags.Admin)]
