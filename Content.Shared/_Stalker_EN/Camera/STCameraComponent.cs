@@ -45,4 +45,10 @@ public sealed partial class STCameraComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier CaptureSound = new SoundPathSpecifier("/Audio/Items/snap.ogg");
+
+    /// <summary>
+    /// Visual effect applied to photos taken with this camera.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public STPhotoEffect Effect = STPhotoEffect.None;
 }

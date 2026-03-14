@@ -17,6 +17,7 @@ public sealed class STCaptureViewportRequestEvent : EntityEventArgs
 {
     public Guid Token;
     public NetEntity Camera;
+    public STPhotoEffect Effect;
 }
 
 /// <summary>
