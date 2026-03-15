@@ -6,7 +6,7 @@
   description: A battered Zenit camera. Still takes decent pictures in the Zone.
   components:
   - type: Sprite
-    sprite: _Stalker_EN/Objects/Devices/camera.rsi
+    sprite: _Stalker_EN/Objects/Devices/camera.rsi # Todo: replace with proper sprite
     state: icon
   - type: Item
     size: Small
@@ -75,7 +75,7 @@
   description: A roll of photographic film. Holds 5 exposures.
   components:
   - type: Sprite
-    sprite: _Stalker_EN/Objects/Devices/film.rsi
+    sprite: _Stalker_EN/Objects/Devices/film.rsi  # Todo: replace with proper sprite
     state: icon
   - type: Item
     size: Tiny
