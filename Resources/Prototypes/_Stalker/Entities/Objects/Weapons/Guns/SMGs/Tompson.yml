@@ -16,10 +16,10 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/tommygun.rsi
   - type: Gun
-    minAngle: 30
-    maxAngle: 80
-    angleIncrease: 2.5
-    angleDecay: 8
+    minAngle: 40
+    maxAngle: 85
+    angleIncrease: 1.7
+    angleDecay: 10
     fireRate: 8
     selectedMode: FullAuto
     availableModes:
