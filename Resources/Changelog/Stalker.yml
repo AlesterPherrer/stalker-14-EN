@@ -1546,5 +1546,12 @@
   id: 161
   time: '2026-03-15T19:48:40.366787+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/638
+- author: teecoding
+  changes:
+  - message: Default HUD theme now uses dark Stalker-styled slot backgrounds
+    type: Tweak
+  id: 162
+  time: '2026-03-15T20:43:52.181120+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/640
 Name: Stalker
 Order: -1
