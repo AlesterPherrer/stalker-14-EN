@@ -1517,5 +1517,12 @@
   id: 159
   time: '2026-03-14T18:02:27.926732+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/634
+- author: dallaszzz
+  changes:
+  - message: T2 suppressors can now be bought from kesha and CS
+    type: Add
+  id: 160
+  time: '2026-03-15T19:45:52.571767+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/636
 Name: Stalker
 Order: -1
