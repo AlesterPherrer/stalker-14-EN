@@ -39,6 +39,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
+using Content.Client._Stalker_EN.CharacterRank; // stalker-changes
 using Robust.Shared.Utility;
 
 

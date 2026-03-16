@@ -86,14 +86,14 @@
     MutantPartPsiDogTail: 475
     MutantPartFrogLeg: 300
 
-    #T3 -------- PENDING REWORK
-    MutantPartBloodsuckerTentacles: 865
-    MutantPartOraculeEye: 950
-    MutantPartZombieHand: 690
-    MutantPartPseudogiantHeart: 4600
+    #T3 -------- PENDING REWORK Modified by Oracle
+    MutantPartBloodsuckerTentacles: 2750
+    MutantPartOraculeEye: 1800
+    MutantPartZombieHand: 1000
+    MutantPartPseudogiantHeart: 9050
     ClothingMaskChimera: 1
     MutantPartChimeraTooth: 1
-    MutantPartIzlomArm: 865
+    MutantPartIzlomArm: 1650
     MutantPartBurerBrain: 2000
     MutantPartControllerBrain: 3500
 
@@ -154,6 +154,7 @@
         WeaponPistolStalkerGlock: 300
         STWeaponRevolverSWModel325: 1000
         STWeaponRevolverSWModel625: 1450
+        STWeaponRevolverSWPC325TR: 350
         # Shotguns
         STWeaponShotgunMossbergM88: 600
         STWeaponShotgunSPAS: 2100
@@ -177,6 +178,7 @@
         BaseGSH-18Mag10: 135
         BaseAPSMag: 225
         STSpeedLoader45ACPEmpty: 120
+        STSpeedLoader357MagnumEmpty: 160
         545Mag20: 250
         545Mag30: 500
         556Mag20: 250
@@ -198,9 +200,9 @@
         8mmBuckshotBox: 825 # T2
         # .45
         45ACPLFMJBox: 100 # T1
-        45ACPMFMJBox: 350 # T2
-        45ACPRIPBox: 800 # Mutant
-        45ACPAPBox: 1950 # T3
+        45ACPMFMJBox: 590 # T2
+        45ACPRIPBox: 750 # Mutant
+        45ACPAPBox: 1600 # T3
         # 7.25
         725PBox: 130 # T1
         725PTBox: 300 # T2
@@ -228,6 +230,10 @@
         739FMJBox: 1950 # T3
         739HPBox: 850 # Mutant
         751UNBox: 850 # Mutant
+        # .357
+        MagazineBox357Magnum: 600 # T2
+        MagazineBox357MagnumAP: 1500 # T3
+        MagazineBox357MagnumHP: 800 # Mutant
 
     - name: shop-category-medicine
       priority: 4

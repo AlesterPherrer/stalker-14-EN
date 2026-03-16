@@ -85,11 +85,11 @@
     MutantPartFrogLeg: 150
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 500
-    MutantPartOraculeEye: 400
-    MutantPartPseudogiantHeart: 3400
-    MutantPartZombieHand: 450
-    MutantPartIzlomArm: 545
+    MutantPartBloodsuckerTentacles: 800
+    MutantPartOraculeEye: 1000
+    MutantPartPseudogiantHeart: 6400
+    MutantPartZombieHand: 650
+    MutantPartIzlomArm: 945
     MutantPartBurerBrain: 1500
     MutantPartControllerBrain: 2500
 
@@ -172,6 +172,7 @@
         556Mag30: 400
         TTMag: 100
         STSpeedLoader45ACPEmpty: 150
+        STSpeedLoader357MagnumEmpty: 160
         BaseAPSMag: 100
         Base751Mag10: 200
 
@@ -212,10 +213,14 @@
         754FMJBox: 2500 # T3
         754HPBox: 1350 # Mutant
         # .45
-        45ACPLFMJBox: 100 # T1
+        45ACPLFMJBox: 110 # T1
         45ACPMFMJBox: 550 # T2
-        45ACPAPBox: 1950 # T3
-        45ACPRIPBox: 800 # Mutant
+        45ACPAPBox: 1550 # T3
+        45ACPRIPBox: 750 # Mutant
+        # .357
+        MagazineBox357Magnum: 600 # T2
+        MagazineBox357MagnumAP: 1500 # T3
+        MagazineBox357MagnumHP: 800 # Mutant
 
     - name: shop-category-medicine # 50% discount from stalkers
       priority: 4
@@ -354,6 +359,11 @@
         STElasticRubberGreen: 50
         STElasticRubberBlue: 50
         FoldedFlagBand: 250
+        # Cameras
+        STCamera: 750
+        STCameraVintage: 1200
+        STCameraDamaged: 400
+        STCameraFilm: 150
 
     - name: shop-category-modules
       priority: 11

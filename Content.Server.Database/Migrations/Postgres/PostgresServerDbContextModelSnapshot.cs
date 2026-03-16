@@ -1406,6 +1406,26 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("stalker_bands", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.StalkerCharacterRank", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("user_id");
+
+                    b.Property<string>("CharacterName")
+                        .HasColumnType("text")
+                        .HasColumnName("character_name");
+
+                    b.Property<TimeSpan>("TimeSpent")
+                        .HasColumnType("interval")
+                        .HasColumnName("time_spent");
+
+                    b.HasKey("UserId", "CharacterName")
+                        .HasName("PK_stalker_character_ranks");
+
+                    b.ToTable("stalker_character_ranks", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.StalkerFaction", b =>
                 {
                     b.Property<int>("Id")
@@ -1561,6 +1581,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("integer")
                         .HasColumnName("embed_color");
 
+                    b.Property<Guid?>("PhotoId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("photo_id");
+
                     b.Property<long>("PublishTimeTicks")
                         .HasColumnType("bigint")
                         .HasColumnName("publish_time_ticks");
@@ -1578,6 +1602,37 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasName("PK_stalker_news_articles");
 
                     b.ToTable("stalker_news_articles", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.StalkerNewsArticlePhoto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("stalker_news_article_photos_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created_at");
+
+                    b.Property<byte[]>("PhotoData")
+                        .IsRequired()
+                        .HasColumnType("bytea")
+                        .HasColumnName("photo_data");
+
+                    b.Property<Guid>("PhotoId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("photo_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_stalker_news_article_photos");
+
+                    b.HasIndex("PhotoId")
+                        .IsUnique();
+
+                    b.ToTable("stalker_news_article_photos", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.StalkerNewsComment", b =>

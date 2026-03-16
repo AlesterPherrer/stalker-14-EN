@@ -87,13 +87,13 @@
     MutantPartFrogLeg: 230
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 1015
-    MutantPartOraculeEye: 2160
-    MutantPartPseudogiantHeart: 5400
-    MutantPartZombieHand: 810
+    MutantPartBloodsuckerTentacles: 2750
+    MutantPartOraculeEye: 1800
+    MutantPartPseudogiantHeart: 9050
+    MutantPartZombieHand: 1000
     ClothingMaskChimera: 1
     MutantPartChimeraTooth: 1
-    MutantPartIzlomArm: 915
+    MutantPartIzlomArm: 1650
     MutantPartBurerBrain: 2000
     MutantPartControllerBrain: 3500
 
@@ -139,6 +139,7 @@
       WeaponPistolStalkerTT: 300
       WeaponPistolStalkerGlock: 250
       WeaponPistolStalkerAPS: 800
+      STWeaponRevolverChiappaRhino60DS: 2200
       # Shotguns
       STWeaponShotgunMP155T: 45 #T0.5
       STWeaponShotgunTOZ34: 225 # T2
@@ -155,8 +156,6 @@
       STWeaponRifleM14: 3750
       STWeaponRifleAKS74: 3500
       STWeaponRifleAKM: 3500
-      STWeaponRifleStalkerAK105SwampThing: 4000
-      STMetroWeaponRifleVSV: 4500
       # Snipers
       STWeaponSniperVepr: 4000
 
@@ -190,6 +189,7 @@
       TTMag: 75
       BaseAPSMag: 100
       STSpeedLoader45ACPEmpty: 120
+      STSpeedLoader357MagnumEmpty: 180
 
   - name: shop-category-ammunition
     priority: 3
@@ -213,10 +213,10 @@
       919PSTBox: 500 # T2
       919PBMBox: 1450 # T3
       # .45
-      45ACPLFMJBox: 100 # T1
-      45ACPMFMJBox: 350 # T2
-      45ACPRIPBox: 800 # Mutant
-      45ACPAPBox: 1950 # T3
+      45ACPLFMJBox: 110 # T1
+      45ACPMFMJBox: 550 # T2
+      45ACPRIPBox: 700 # Mutant
+      45ACPAPBox: 1500 # T3
       # 5.45
       545HPBox: 725 # Mutant
       545PCBox: 1650 # T3
@@ -234,6 +234,10 @@
       # 7.54
       754HPBox: 850 # Mutant
       754FMJBox: 2500 # T3
+      # .357
+      MagazineBox357Magnum: 600 # T2
+      MagazineBox357MagnumAP: 1500 # T3
+      MagazineBox357MagnumHP: 800 # Mutant
 
   - name: shop-category-medicine
     priority: 4
@@ -387,6 +391,11 @@
       STElasticRubberGreen: 50
       STElasticRubberBlue: 50
       FoldedFlagCS: 250
+      # Cameras
+      STCamera: 750
+      STCameraVintage: 1200
+      STCameraDamaged: 400
+      STCameraFilm: 150
 
   - name: shop-category-modules
     priority: 11
@@ -400,6 +409,10 @@
       STModuleSilencerSMGT1: 600
       STModuleSniperSightT1: 600
       STModuleSilencerSniperT1: 600
+      STModuleSilencerRiflesT2Ru: 2800
+      STModuleSilencerRiflesT2Nato: 2800
+      STModuleSilencerSniperT2: 2800
+      STModuleSilencerSMGT2: 2800
 
   - name: shop-category-customization
     priority: 12
