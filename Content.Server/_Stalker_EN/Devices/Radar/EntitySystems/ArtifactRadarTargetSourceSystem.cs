@@ -1,6 +1,7 @@
 using Content.Server._Stalker.ZoneArtifact.Components.Detector;
 using Content.Server._Stalker.ZoneArtifact.Components.Spawner;
 using Content.Server._Stalker.ZoneArtifact.Systems;
+using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker_EN.Devices.Radar;
 using Content.Shared._Stalker_EN.Devices.Radar.Components;
 using Robust.Server.GameObjects;
@@ -19,10 +20,14 @@ public sealed class ArtifactRadarTargetSourceSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly ZoneArtifactSpawnerSystem _artifactSpawner = default!;
 
+    private readonly HashSet<Entity<ZoneArtifactDetectorTargetComponent>> _artifactBuffer = new();
+    private EntityQuery<ZoneAnomalyComponent> _anomalyQuery;
+
     public override void Initialize()
     {
         base.Initialize();
 
+        _anomalyQuery = GetEntityQuery<ZoneAnomalyComponent>();
         SubscribeLocalEvent<ArtifactRadarTargetSourceComponent, RadarTargetSourceUpdateEvent>(OnRadarUpdate);
     }
 
@@ -35,12 +40,16 @@ public sealed class ArtifactRadarTargetSourceSystem : EntitySystem
         if (args.UserGridUid != null)
             TryComp(args.UserGridUid.Value, out userGrid);
 
-        var entities = _entityLookup.GetEntitiesInRange<ZoneArtifactDetectorTargetComponent>(
-            args.UserMapCoords, entity.Comp.DetectionRange);
+        _artifactBuffer.Clear();
+        _entityLookup.GetEntitiesInRange(args.UserMapCoords, entity.Comp.DetectionRange, _artifactBuffer);
 
-        foreach (var target in entities)
+        foreach (var target in _artifactBuffer)
         {
             if (!target.Comp.Detectable)
+                continue;
+
+            // Zone anomalies should only appear as anomaly blips, not artifact blips.
+            if (_anomalyQuery.HasComponent(target))
                 continue;
 
             if (target.Comp.DetectedLevel > entity.Comp.Level)
@@ -51,6 +60,9 @@ public sealed class ArtifactRadarTargetSourceSystem : EntitySystem
 
             var diff = targetWorldPos - args.UserWorldPos;
             var distance = diff.Length();
+
+            if (distance > entity.Comp.DetectionRange)
+                continue;
 
             // Skip spawners that don't have artifacts ready (empty cooldown spawners)
             if (TryComp<ZoneArtifactSpawnerComponent>(target, out var spawner))
@@ -66,31 +78,8 @@ public sealed class ArtifactRadarTargetSourceSystem : EntitySystem
                 }
             }
 
-            // Calculate angle in grid-local space for consistency across restarts
-            float radarAngle;
-            if (userGrid != null && args.UserGridUid != null)
-            {
-                // Convert positions to grid-local coordinates
-                var userLocalPos = _map.WorldToLocal(args.UserGridUid.Value, userGrid, args.UserWorldPos);
-                var targetLocalPos = _map.WorldToLocal(args.UserGridUid.Value, userGrid, targetWorldPos);
-                var localDiff = targetLocalPos - userLocalPos;
-
-                // Angle in grid-local space (consistent regardless of grid rotation)
-                var localAngle = new Angle(localDiff);
-                radarAngle = (float)(Math.PI / 2 - localAngle.Theta);
-            }
-            else
-            {
-                // Fallback to world-space if not on a grid
-                var worldAngle = new Angle(diff);
-                radarAngle = (float)(Math.PI / 2 - worldAngle.Theta);
-            }
-
-            // Normalize to -PI to PI range
-            while (radarAngle > MathF.PI)
-                radarAngle -= MathF.PI * 2;
-            while (radarAngle < -MathF.PI)
-                radarAngle += MathF.PI * 2;
+            var radarAngle = RadarAngleHelper.CalculateRadarAngle(
+                _map, args.UserGridUid, userGrid, args.UserWorldPos, targetWorldPos);
 
             args.Blips.Add(new RadarBlip(
                 GetNetEntity(target),
