@@ -130,6 +130,11 @@
           maxAmount: 1
           prob: 1
     # Stalker-EN start
+    - type: EmitSoundOnTrigger
+      sound:
+       collection: STZombieSpotted
+       params:
+         variation: 0.125
     - type: STMobVariantConfig
       variants:
       - chance: 0.08
@@ -171,11 +176,6 @@
         maxWeightMultiplier: 1.6
         butcherSwaps:
           MutantPartZombieHand: STMutantPartLegendaryZombieHand
-      - type: EmitSoundOnTrigger
-        sound:
-          collection: STZombieSpotted
-          params:
-            variation: 0.125
     # Stalker-EN end
 
 - type: entity
