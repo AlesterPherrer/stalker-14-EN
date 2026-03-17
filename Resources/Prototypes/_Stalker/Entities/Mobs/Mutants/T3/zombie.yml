@@ -85,6 +85,7 @@
           true
     - type: RechargeBasicEntityAmmo
       rechargeCooldown: 1.2
+      rechargeSound: null
     - type: BasicEntityAmmoProvider
       proto: Bullet545PC
       capacity: 8
