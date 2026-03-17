@@ -435,10 +435,19 @@
     - type: PersonalDamageBlock
     - type: Damageable
       damageContainer: Biological
+      damageModifierSet: Monolith # Stalker EN change
     - type: STAnomalyTipsViewing
     - type: AutoImplant
       implants:
       - STSeraBombImplant
+    - type: IntrinsicRadioReceiver # Stalker EN change start
+    - type: IntrinsicRadioTransmitter
+      channels:
+      - Monolith
+    - type: ActiveRadio
+      channels:
+      - Monolith
+      GlobalReceive: true # Stalker EN change end
 
 - type: entity
   name: кукла СБУ (переименуй меня)
