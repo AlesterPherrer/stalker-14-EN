@@ -41,15 +41,11 @@ public sealed class ArtifactRadarTargetSourceSystem : EntitySystem
             TryComp(args.UserGridUid.Value, out userGrid);
 
         _artifactBuffer.Clear();
-        _entityLookup.GetEntitiesInRange(args.UserMapCoords, entity.Comp.DetectionRange, _artifactBuffer);
+        _entityLookup.GetEntitiesInRange(args.UserMapCoords, entity.Comp.DetectionRange, _artifactBuffer, LookupFlags.Uncontained);
 
         foreach (var target in _artifactBuffer)
         {
             if (!target.Comp.Detectable)
-                continue;
-
-            // Zone anomalies should only appear as anomaly blips, not artifact blips.
-            if (_anomalyQuery.HasComponent(target))
                 continue;
 
             if (target.Comp.DetectedLevel > entity.Comp.Level)
@@ -57,25 +53,29 @@ public sealed class ArtifactRadarTargetSourceSystem : EntitySystem
 
             var targetXform = xformQuery.GetComponent(target);
             var targetWorldPos = _transform.GetWorldPosition(targetXform, xformQuery);
-
-            var diff = targetWorldPos - args.UserWorldPos;
-            var distance = diff.Length();
+            var distance = (targetWorldPos - args.UserWorldPos).Length();
 
             if (distance > entity.Comp.DetectionRange)
                 continue;
 
-            // Skip spawners that don't have artifacts ready (empty cooldown spawners)
+            // Process spawner activation for ALL targets (including anomalies)
             if (TryComp<ZoneArtifactSpawnerComponent>(target, out var spawner))
             {
                 if (!_artifactSpawner.Ready((target, spawner)))
-                    continue;
+                    continue; // No artifact ready — skip
 
-                // Spawn artifact if player is close enough (like regular detectors do)
                 if (distance <= entity.Comp.ActivationDistance)
                 {
                     _artifactSpawner.TrySpawn((target, spawner));
-                    continue; // Spawner no longer ready - actual artifact will be found next update
+                    continue; // Spawned — actual artifact appears next update
                 }
+                // Ready spawner: falls through to add blip (even if it's an anomaly)
+            }
+            else if (_anomalyQuery.HasComponent(target))
+            {
+                // Non-spawner anomaly — skip from artifact blips
+                // These show via AnomalyRadarTargetSourceSystem instead
+                continue;
             }
 
             var radarAngle = RadarAngleHelper.CalculateRadarAngle(

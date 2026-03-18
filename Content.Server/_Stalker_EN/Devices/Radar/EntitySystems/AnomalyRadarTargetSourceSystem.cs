@@ -35,7 +35,7 @@ public sealed class AnomalyRadarTargetSourceSystem : EntitySystem
             TryComp(args.UserGridUid.Value, out userGrid);
 
         _anomalyBuffer.Clear();
-        _entityLookup.GetEntitiesInRange(args.UserMapCoords, entity.Comp.DetectionRange, _anomalyBuffer);
+        _entityLookup.GetEntitiesInRange(args.UserMapCoords, entity.Comp.DetectionRange, _anomalyBuffer, LookupFlags.Uncontained);
 
         foreach (var target in _anomalyBuffer)
         {
