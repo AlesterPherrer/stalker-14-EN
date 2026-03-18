@@ -38,6 +38,11 @@
       - type: NpcFactionMember
         factions:
         - ClearSky
+      - type: Vocal # stalker EN change start
+        sounds:
+          Male: MaleHumanLoner
+          Female: FemaleHumanLoner
+          Unsexed: MaleHumanLoner # stalker EN change end
 
 - type: job
   id: StalkerHeadClearSky
@@ -79,6 +84,11 @@
     - type: NpcFactionMember
       factions:
       - ClearSky
+    - type: Vocal # stalker EN change start
+      sounds:
+        Male: MaleHumanLoner
+        Female: FemaleHumanLoner
+        Unsexed: MaleHumanLoner # stalker EN change end
 
 - type: startingGear
   id: StalkerClearSkyGear

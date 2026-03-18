@@ -12,7 +12,8 @@
       totalIntensity: 80 # about a ~4 tile radius
       canCreateVacuum: false
     - type: EmitSoundOnTrigger # EN
-      sound: /Audio/Effects/balloon_hits.ogg
+      sound: /Audio/Effects/chopstickbreak.ogg
+      volume: 1.3
       positional: true
     - type: TriggerOnUse
     - type: TimerTrigger
@@ -61,7 +62,8 @@
           keysIn:
           - stageTwo
     - type: EmitSoundOnTrigger # EN
-      sound: /Audio/Effects/balloon_hits.ogg
+      sound: /Audio/Effects/chopstickbreak.ogg
+      volume: 1.3
       positional: true
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Grenades/rgdgrenade.rsi
@@ -98,7 +100,8 @@
       totalIntensity: 10
       canCreateVacuum: false
     - type: EmitSoundOnTrigger # EN
-      sound: /Audio/Effects/box_deploy.ogg
+      sound: /Audio/Effects/chopstickbreak.ogg
+      volume: 1.3
       positional: true
     - type: TriggerOnUse
     - type: TimerTrigger
@@ -125,7 +128,8 @@
   suffix: Stalker, Граната
   components:
     - type: EmitSoundOnTrigger # EN # change this one
-      sound: /Audio/Effects/balloon_hits.ogg
+      sound: /Audio/Effects/chopstickbreak.ogg
+      volume: 1.3
       positional: true
     - type: Sprite
       sprite: Objects/Weapons/Grenades/smoke.rsi
@@ -185,7 +189,8 @@
       totalIntensity: 240
       canCreateVacuum: false
     - type: EmitSoundOnTrigger # EN
-      sound: /Audio/Effects/balloon_hits.ogg
+      sound: /Audio/Effects/chopstickbreak.ogg
+      volume: 1.3
       positional: true
     - type: TriggerOnUse
     - type: TimerTrigger
@@ -276,7 +281,8 @@
       totalIntensity: 150
       canCreateVacuum: false
     - type: EmitSoundOnTrigger # EN
-      sound: /Audio/Effects/balloon_hits.ogg
+      sound: /Audio/Effects/chopstickbreak.ogg
+      volume: 1.3
       positional: true
     - type: TriggerOnUse
     - type: TimerTrigger
@@ -321,7 +327,8 @@
       totalIntensity: 50
       canCreateVacuum: false
     - type: EmitSoundOnTrigger # EN
-      sound: /Audio/Effects/balloon_hits.ogg
+      sound: /Audio/Effects/chopstickbreak.ogg
+      volume: 1.3
       positional: true
     - type: TriggerOnUse
     - type: TimerTrigger

@@ -48,15 +48,21 @@
       - type: STAnomalyTipsViewing
       - type: AutoImplant
         implants:
-        - STSeraBombImplant
-      - type: IntrinsicRadioReceiver # Stalker EN change start
+        - STMonoBombImplant # Stalker EN change start
+      - type: IntrinsicRadioReceiver
       - type: IntrinsicRadioTransmitter
         channels:
         - Monolith
       - type: ActiveRadio
         channels:
         - Monolith
-        GlobalReceive: true # Stalker EN change end
+        GlobalReceive: true
+      - type: Vocal
+        sounds:
+          Male: MaleHumanMonolith
+          Female: FemaleHumanMonolith
+          Unsexed: MaleHumanMonolith
+      - type: PsyVoiceEmote # stalker EN change end
 
 - type: job
   id: StalkerHeadMonolith
@@ -108,15 +114,21 @@
     - type: STAnomalyTipsViewing
     - type: AutoImplant
       implants:
-      - STSeraBombImplant
-    - type: IntrinsicRadioReceiver # Stalker EN change start
+      - STMonoBombImplant # Stalker EN change start
+    - type: IntrinsicRadioReceiver
     - type: IntrinsicRadioTransmitter
       channels:
       - Monolith
     - type: ActiveRadio
       channels:
       - Monolith
-      GlobalReceive: true # Stalker EN change end
+      GlobalReceive: true
+    - type: Vocal
+      sounds:
+        Male: MaleHumanMonolith
+        Female: FemaleHumanMonolith
+        Unsexed: MaleHumanMonolith
+    - type: PsyVoiceEmote # stalker EN change end
 
 - type: startingGear
   id: MonolithGear

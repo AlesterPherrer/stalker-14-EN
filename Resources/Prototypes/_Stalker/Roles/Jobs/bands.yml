@@ -37,7 +37,13 @@
         - type: NpcFactionMember
           factions:
           - Bandit
-
+        - type: Vocal # stalker EN change start
+          sounds:
+            Male: MaleHumanBandit
+            Female: FemaleHumanBandit
+            Unsexed: MaleHumanBandit
+        - type: CheekiBreeki # stalker EN change end
+          
 - type: job
   id: StalkerHeadBandit
   name: job-head-bandit
@@ -77,6 +83,12 @@
         - type: NpcFactionMember
           factions:
           - Bandit
+        - type: Vocal # stalker EN change start
+          sounds:
+            Male: MaleHumanBandit
+            Female: FemaleHumanBandit
+            Unsexed: MaleHumanBandit
+        - type: CheekiBreeki # stalker EN change end
 
 - type: startingGear
   id: BandGear

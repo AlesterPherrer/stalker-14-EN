@@ -36,6 +36,11 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: Vocal # stalker EN change start
+          sounds:
+            Male: MaleHumanFreedom
+            Female: FemaleHumanFreedom
+            Unsexed: MaleHumanFreedom # stalker EN change end
 
 - type: job
   id: StalkerHeadFreedom
@@ -77,6 +82,11 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: Vocal # stalker EN change start
+          sounds:
+            Male: MaleHumanFreedom
+            Female: FemaleHumanFreedom
+            Unsexed: MaleHumanFreedom # stalker EN change end
 
 - type: startingGear
   id: FreedomGear

@@ -39,6 +39,11 @@
       - type: NpcFactionMember
         factions:
         - MilitaryStalker
+      - type: Vocal # stalker EN change start
+        sounds:
+          Male: MaleHumanMilitary
+          Female: FemaleHumanMilitary
+          Unsexed: MaleHumanMilitary # stalker EN change end
 
 - type: job
   id: HeadMilitaryStalker
@@ -81,6 +86,11 @@
     - type: NpcFactionMember
       factions:
       - MilitaryStalker
+    - type: Vocal # stalker EN change start
+      sounds:
+        Male: MaleHumanMilitary
+        Female: FemaleHumanMilitary
+        Unsexed: MaleHumanMilitary # stalker EN change end
 
 - type: job
   id: Military
@@ -120,7 +130,11 @@
       - type: NpcFactionMember
         factions:
         - Military
-
+      - type: Vocal # stalker EN change start
+        sounds:
+          Male: MaleHumanMilitary
+          Female: FemaleHumanMilitary
+          Unsexed: MaleHumanMilitary # stalker EN change end
 
 - type: job
   id: MilitaryHead
@@ -163,6 +177,12 @@
         - type: GuardFactionController
           toggleOffAction: GuardFactionControllerOffAction
           toggleOnAction: GuardFactionControllerOnAction
+        - type: Vocal # stalker EN change start
+          sounds:
+            Male: MaleHumanMilitary
+            Female: FemaleHumanMilitary
+            Unsexed: MaleHumanMilitary # stalker EN change end
+
 - type: job
   id: MilitaryOfficer
   name: job-military-officer
@@ -201,6 +221,11 @@
         - type: NpcFactionMember
           factions:
           - Military
+        - type: Vocal # stalker EN change start
+          sounds:
+            Male: MaleHumanMilitary
+            Female: FemaleHumanMilitary
+            Unsexed: MaleHumanMilitary # stalker EN change end
 
 - type: startingGear
   id: MilitaryGear
