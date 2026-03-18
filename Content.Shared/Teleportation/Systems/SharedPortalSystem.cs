@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Content.Shared.Access.Systems;
+using Content.Shared.Chat;
 using Content.Shared.Ghost;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
@@ -109,13 +110,24 @@ public abstract class SharedPortalSystem : EntitySystem
             _pulling.TryStopPull(pullerComp.Pulling.Value, subjectPulling);
         }
 
-        // if they came from another portal, just return and wait for them to exit the portal
-        if (HasComp<PortalTimeoutComponent>(subject))
+        // stalker-en-changes
+        // if they have a timeout, check their cooldown
+        if (TryComp<PortalTimeoutComponent>(subject, out var timeout))
         {
-            return;
+            if (timeout.Cooldown <= _timing.CurTime)
+            {
+                RemComp<PortalTimeoutComponent>(subject);
+            }
+            else
+            {
+                _popup.PopupClient(Loc.GetString("teleport-cooldown-denied", ("time", timeout.Cooldown.Seconds)),
+                    Transform(subject).Coordinates,
+                    subject,
+                    PopupType.Medium);
+                return;
+            }
         }
 
-        // stalker-en-changes
         // If dragging isn't allowed then don't let em through
         if (!ent.Comp.AllowDragged &&
             (_pulling.IsPulling(subject) || _pulling.IsPulled(subject)))
@@ -124,7 +136,13 @@ public abstract class SharedPortalSystem : EntitySystem
         if (ent.Comp.AccessLocked)
         {
             if (!_access.IsAllowed(subject, ent.Owner))
+            {
+                _popup.PopupClient(Loc.GetString("teleport-access-denied"),
+                    Transform(subject).Coordinates,
+                    subject,
+                    PopupType.Medium);
                 return;
+            }
         }
 
         // stalker-en-changes-end
@@ -144,7 +162,7 @@ public abstract class SharedPortalSystem : EntitySystem
             if (HasComp<PortalComponent>(target))
             {
                 // if target is a portal, signal that they shouldn't be immediately teleported back
-                var timeout = EnsureComp<PortalTimeoutComponent>(subject);
+                timeout = EnsureComp<PortalTimeoutComponent>(subject); // stalker-en-changes
                 timeout.EnteredPortal = ent;
                 timeout.Cooldown = ent.Comp.Cooldown + _timing.CurTime; // stalker-en-changes
                 Dirty(subject, timeout);
