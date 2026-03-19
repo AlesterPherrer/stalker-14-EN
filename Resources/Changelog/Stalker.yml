@@ -1697,5 +1697,12 @@
   id: 178
   time: '2026-03-19T19:43:14.582095+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/676
+- author: dallaszzz
+  changes:
+  - message: Fixes the backup emote and error sprites in the emote menu
+    type: Fix
+  id: 179
+  time: '2026-03-19T19:48:43.273714+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/677
 Name: Stalker
 Order: -1
