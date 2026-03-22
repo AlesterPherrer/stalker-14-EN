@@ -1,16 +1,16 @@
 - type: entity
   parent: SeedBase
   name: packet of rice seeds
-  id: RiceSeedsST
+  id: STRiceSeeds
   suffix: ST, Stalker, Seeds
   components:
     - type: Seed
-      seedId: riceST
+      seedId: STrice
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/rice.rsi
 
 - type: seed
-  id: riceST
+  id: STrice
   name: seeds-rice-name
   noun: seeds-noun-seeds
   displayName: seeds-rice-display-name
@@ -40,16 +40,16 @@
 - type: entity
   parent: SeedBase
   name: packet of carrot seeds
-  id: CarrotSeedsST
+  id: STCarrotSeeds
   suffix: ST, Stalker, Seeds
   components:
     - type: Seed
-      seedId: carrotsST
+      seedId: STcarrots
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/carrot.rsi
 
 - type: seed
-  id: carrotsST
+  id: STcarrots
   name: seeds-carrots-name
   noun: seeds-noun-seeds
   displayName: seeds-carrots-display-name
@@ -82,16 +82,16 @@
 - type: entity
   parent: SeedBase
   name: packet of potato seeds
-  id: PotatoSeedsST
+  id: STPotatoSeeds
   suffix: ST, Stalker, Seeds
   components:
     - type: Seed
-      seedId: potatoST
+      seedId: STpotato
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/potato.rsi
 
 - type: seed
-  id: potatoST
+  id: STpotato
   name: seeds-potato-name
   noun: seeds-noun-seeds
   displayName: seeds-potato-display-name
@@ -125,17 +125,17 @@
 - type: entity
   parent: SeedBase
   name: packet of tomato seeds
-  id: TomatoSeedsST
+  id: STTomatoSeeds
   suffix: ST, Stalker, Seeds
   components:
     - type: Seed
-      seedId: tomatoST
+      seedId: STtomato
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/tomato.rsi
 
 
 - type: seed
-  id: tomatoST
+  id: STtomato
   name: seeds-tomato-name
   noun: seeds-noun-seeds
   displayName: seeds-tomato-display-name
@@ -175,17 +175,17 @@
 - type: entity
   parent: SeedBase
   name: packet of cabbage seeds
-  id: CabbageSeedsST
+  id: STCabbageSeeds
   suffix: ST, Stalker, Seeds
   components:
     - type: Seed
-      seedId: cabbageST
+      seedId: STcabbage
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/cabbage.rsi
 
 
 - type: seed
-  id: cabbageST
+  id: STcabbage
   name: seeds-cabbage-name
   noun: seeds-noun-seeds
   displayName: seeds-cabbage-display-name
@@ -213,16 +213,16 @@
 - type: entity
   parent: SeedBase
   name: packet of corn seeds
-  id: CornSeedsST
+  id: STCornSeeds
   suffix: ST, Stalker, Seeds
   components:
     - type: Seed
-      seedId: cornST
+      seedId: STcorn
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/corn.rsi
 
 - type: seed
-  id: cornST
+  id: STcorn
   name: seeds-corn-name
   noun: seeds-noun-seeds
   displayName: seeds-corn-display-name
@@ -254,16 +254,16 @@
   parent: SeedBase
   name: packet of onion seeds
   description: "Not a shallot."
-  id: OnionSeedsST
+  id: STOnionSeeds
   suffix: ST, Stalker, Seeds
   components:
     - type: Seed
-      seedId: onionST
+      seedId: STonion
     - type: Sprite
       sprite: Objects/Specific/Hydroponics/onion.rsi
 
 - type: seed
-  id: onionST
+  id: STonion
   name: seeds-onion-name
   noun: seeds-noun-seeds
   displayName: seeds-onion-display-name
