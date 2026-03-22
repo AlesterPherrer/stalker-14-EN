@@ -10,7 +10,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/Head/Sera_/strash_seraphim_helm.rsi
   - type: HelmetVisor
-    enabled: false
+    isToggleable: false
   # - type: Craftable
   # - type: Tag
     # tags:

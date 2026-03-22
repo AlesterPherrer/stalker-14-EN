@@ -37,7 +37,7 @@
         Blunt: 0.80
         Slash: 0.80
         Piercing: 0.85
-    enabled: true
+    isToggleable: true
   - type: HideLayerClothing
     slots:
     - Hair
