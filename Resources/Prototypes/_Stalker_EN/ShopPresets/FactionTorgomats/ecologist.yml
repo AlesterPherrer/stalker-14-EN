@@ -350,12 +350,15 @@
     - name: Gardening
       priority: 14
       items:
+        HydroponicsToolScythe: 200
+        HydroponicsToolClippers: 200
+        HydroponicsToolMiniHoe: 70
+        Bucket: 60
+        StalkerGrinder: 150
         RobustHarvestChemistryBottleStalker: 50
         E-Z-NutrientChemistryBottleStalker: 50
         CannabisSeedsStalker: 70
         CarrotSeeds: 70
-        HydroponicsToolMiniHoe: 70
-        Bucket: 60
         STGoldShovel: 100
         TomatoSeeds: 70
         PotatoSeeds: 70
@@ -363,4 +366,3 @@
         OnionSeeds: 70
         RiceSeeds: 70
         CornSeeds: 70
-        
