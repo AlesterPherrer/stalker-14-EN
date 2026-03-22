@@ -8,6 +8,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Weapons.Reflect;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Timing;
 using System.Security.Principal;
@@ -21,6 +22,7 @@ public sealed class HelmetVisorSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly ClothingSystem _clothing = default!;
     [Dependency] private readonly IdentitySystem _identity = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -74,6 +76,9 @@ public sealed class HelmetVisorSystem : EntitySystem
             return;
 
         comp.IsUp = up;
+
+        var sound = comp.IsUp ? comp.SoundVisorUp : comp.SoundVisorDown;
+        _audio.PlayPredicted(sound, uid, Transform(uid).ParentUid);
 
         if (comp.ToggleActionEntity is { } action)
             _actions.SetToggled(action, comp.IsUp);

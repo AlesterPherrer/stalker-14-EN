@@ -1,8 +1,8 @@
-// Content.Shared/_Stalker/HelmetVisor/HelmetVisorComponent.cs
 using Content.Shared.Clothing.EntitySystems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Content.Shared.Damage;
+using Robust.Shared.Audio;
 
 namespace Content.Shared.Clothing.Components;
 
@@ -29,6 +29,12 @@ public sealed partial class HelmetVisorComponent : Component
     public DamageModifierSet? VisorUpModifiers;
 
     public DamageModifierSet? DefaultModifiers;
+
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public SoundSpecifier SoundVisorUp = new SoundPathSpecifier("/Audio/_Stalker_EN/Clothing/Hats/vityaz_up.ogg");
+
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public SoundSpecifier SoundVisorDown = new SoundPathSpecifier("/Audio/_Stalker_EN/Clothing/Hats/vityaz_down.ogg");
 
     [DataField]
     public float? VisorUpReflectProb;
