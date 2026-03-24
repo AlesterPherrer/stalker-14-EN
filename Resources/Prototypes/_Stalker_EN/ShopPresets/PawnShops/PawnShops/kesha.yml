@@ -313,7 +313,6 @@
         ExtendedEmergencyOxygenTankFilledStalker: 50
         Matchbox: 10
         HatchetStalker: 150
-        FitnessCenterCard: 5000
     - name: shop-category-provisions
       priority: 9
       items:
