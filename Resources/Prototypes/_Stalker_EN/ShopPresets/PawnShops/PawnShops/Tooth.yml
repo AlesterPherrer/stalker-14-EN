@@ -138,7 +138,7 @@
       STWeaponRifleAKS74: 5500
       STWeaponRifleL85: 3250
       STWeaponRifleAKM: 6700
-      STWeaponRifleASVAL: 12500 # The War
+      #STWeaponRifleASVAL: 12500 # The War
 
   - name: shop-category-magazines
     priority: 2
@@ -158,8 +158,8 @@
       Base739Mag10: 200
       VityazMag: 240
       751Mag20: 650
-      Base939Mag10: 250 # ASVAL
-      939Mag20: 800 # ASVAL
+      #Base939Mag10: 250 # ASVAL
+      #939Mag20: 800 # ASVAL
 
   - name: shop-category-ammunition
     priority: 3
@@ -184,7 +184,7 @@
       918SP7Box: 675 # Mutant
       918PBMBox: 1525 # T3
       # 9x39
-      STBox9x39SP5: 1550 # T2 # prohibitively expensive to fire
+      #STBox9x39SP5: 1550 # T2 # prohibitively expensive to fire
       # 5.45
       545FMJBox: 700 # T2
       545HPBox: 775 # Mutant
