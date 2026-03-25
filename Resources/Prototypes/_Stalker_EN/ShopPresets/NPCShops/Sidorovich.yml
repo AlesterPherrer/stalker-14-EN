@@ -368,6 +368,7 @@
     - name: shop-category-utilities
       priority: 10
       items:
+        Shovel: 100
         STCombatKnife: 25
         BoxZiptie: 50
         BoxSafebox: 300
@@ -398,7 +399,6 @@
         BookCookingStalkerGuide: 200
         BookCookingStalkerHomemade: 600
         STRag: 10
-
     - name: shop-category-customization
       priority: 11
       items:

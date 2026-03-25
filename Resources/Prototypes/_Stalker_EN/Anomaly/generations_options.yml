@@ -2,7 +2,7 @@
 - type: stAnomalyGenerationOptions
   id: STGreatSwampsGenerationOptions
   options:
-    totalCount: 650
+    totalCount: 400
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalySource
@@ -27,8 +27,6 @@
       weight: 1
     - protoId: ZoneAnomalyPulse
       weight: 1
-    - protoId: ZoneAnomalyGrabber
-      weight: 2.5
     # Thermal
     - protoId: ZoneAnomalySteam
       weight: 2
