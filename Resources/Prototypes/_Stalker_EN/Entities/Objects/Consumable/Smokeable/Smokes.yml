@@ -176,14 +176,3 @@
         reagents:
         - ReagentId: THC
           Quantity: 300
-
-- type: craftRecipe
-  id: STLargeBluntRecipe
-  resultProtos:
-  - JointLarge
-  craftTime: 15
-  items:
-    STPaperRolling:
-      amount: 5
-    STGroundCannabis:
-      amount: 10
