@@ -154,7 +154,7 @@ public abstract class SharedHelmetVisorSystem : EntitySystem
         if (InventorySystem.TryGetSlotEntity(Transform(uid).ParentUid, "mask", out var maskItem))
             if (_tagSystem.HasTag(maskItem.Value, "BlockMask"))
                 return false;
-       return true
+        return true;
     }
 }
 
