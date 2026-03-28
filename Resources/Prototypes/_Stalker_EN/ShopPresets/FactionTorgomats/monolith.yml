@@ -32,6 +32,7 @@
     Matchbox: 5
     MonolithInventoryRestockEN: 1
     Screwdriver: 1
+    Bloodpack: 10
 
 - type: entity
   parent: BaseItem
@@ -119,7 +120,7 @@
     items:
       STWeaponRifleStalkerAK12en: 10 # replace with mono ver later
       STWeaponSMGStalkerCP2Veresk: 8
-      STWeaponRifleAK103: 16
+      #STWeaponRifleAK103: 16 # Give them an RPK later instead
       STWeaponRifleStalkerAbakan: 14
       STWeaponShotgunProtecta: 8
       STSeraKnife: 3
@@ -137,7 +138,6 @@
     items:
       MedkitElite: 3
       MedkitLAR: 4
-      Bloodpack: 1
 
   - name: shop-category-customization
     priority: 13
