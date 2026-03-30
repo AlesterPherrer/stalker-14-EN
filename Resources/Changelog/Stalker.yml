@@ -1995,5 +1995,12 @@
   id: 210
   time: '2026-03-30T19:57:48.317412+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/731
+- author: BELNAKBU
+  changes:
+  - message: fixed this build and debug test
+    type: Fix
+  id: 211
+  time: '2026-03-30T20:17:24.455493+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/737
 Name: Stalker
 Order: -1
