@@ -220,6 +220,7 @@
         ClothingHeadAssaultHelmetMerc: 3500 # T3 - PvP
         ClothingHeadHelmetInfantryMerc: 600
         ClothingHeadHelmetVityaz1Merc: 3000 # T3 - PvP
+        ClothingOuterArmorExoskelet: 100000
 
     - name: shop-category-storage-and-containers
       priority: 7

@@ -121,6 +121,7 @@
         ClothingOuterArmorSevaSciWhite: 1550
         ClothingOuterArmorSevaSciRed: 1750
         ClothingOuterArmorSSP99Moneygang: 6969
+        ClothingOuterArmorExoskelet: 100000
 
     - name: shop-category-storage-and-containers
       priority: 7

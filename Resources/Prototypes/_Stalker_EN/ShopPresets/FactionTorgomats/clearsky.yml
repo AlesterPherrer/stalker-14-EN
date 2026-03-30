@@ -307,6 +307,7 @@
       STClothingOuterArmorCN-4a: 3600 # Illusion of choice
       STClothingOuterArmorCN-4aResearcher: 4000 # Slightly better SEVA
       ClothingOuterArmorSevaClearSky: 15000 # T3 - ENV/PVP
+      ClothingOuterArmorExoskelet: 100000
 
   - name: shop-category-storage-and-containers
     priority: 7

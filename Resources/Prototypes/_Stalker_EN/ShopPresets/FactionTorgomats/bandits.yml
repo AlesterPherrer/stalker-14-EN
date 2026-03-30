@@ -281,6 +281,7 @@
         ClothingOuterArmorSevaBandit: 4000 # T3 - PVE
         STClothingOuterArmorRCBZ: 2000
         ClothingOuterArmorBandits: 13000 #T3
+        ClothingOuterArmorExoskelet: 100000
 
     - name: shop-category-storage-and-containers
       priority: 7

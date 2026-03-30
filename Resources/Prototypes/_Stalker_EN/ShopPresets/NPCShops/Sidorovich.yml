@@ -294,6 +294,7 @@
         SetZaryaStalkerBuyableCrate: 3300 # T2 - ENV
         ClothingOuterArmorSevaStalker: 5000 # T3 - ENV
         ClothingOuterArmorSSP99Moneygang: 42069
+        ClothingOuterArmorExoskelet: 100000
 
     - name: shop-category-storage-and-containers
       priority: 7

@@ -165,6 +165,7 @@
         ClothingOuterArmorZaryaDolg: 2000 # T2 - Universal
         ClothingOuterArmorSevaDolgRed: 5250 # T3 - ENV
         SetPS5MDolgBuyableCrate: 12000 #T3 - PvP
+        ClothingOuterArmorExoskelet: 100000
 
     - name: shop-category-storage-and-containers
       priority: 7

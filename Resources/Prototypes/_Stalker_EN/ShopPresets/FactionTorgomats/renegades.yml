@@ -234,6 +234,7 @@
       ClothingOuterArmorRenegate: 11000 # T3
       # STClothingOuterArmorLightPlateVestBasePSZ7rene: 12000 # T3 - PVP ST-EN: Moved to Zealot
       ClothingOuterArmorSevarenegat: 4000 # T3 - PVE
+      ClothingOuterArmorExoskelet: 100000
 
   - name: shop-category-storage-and-containers
     priority: 7
