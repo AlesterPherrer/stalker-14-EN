@@ -1980,5 +1980,13 @@
   id: 208
   time: '2026-03-30T19:49:43.855542+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/736
+- author: BELNAKBU
+  changes:
+  - message: 16 new variants of zombies with guns, 12 variants new melee zombies,
+      spawntriggers for new melee zombies
+    type: Add
+  id: 209
+  time: '2026-03-30T19:56:50.923944+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/713
 Name: Stalker
 Order: -1
