@@ -1,7 +1,7 @@
 
 - type: job
   id: StalkerJournalist
-  name: Tourist
+  name: job-journalist
   icon: journalist
   description: job-journalist-desc
   playTimeTracker: JobJournalist

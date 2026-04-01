@@ -1,6 +1,6 @@
 - type: job
   id: StalkerClearSky
-  name: Spark Soldier
+  name: job-clearsky
   icon: cn
   description: job-clearsky-desc
   playTimeTracker: JobClearSky
@@ -46,7 +46,7 @@
 
 - type: job
   id: StalkerHeadClearSky
-  name: Mercenary "Scar" from S.T.A.L.K.E.R. Clear Sky tm
+  name: job-clearsky-commander
   icon: cn
   description: job-clearsky-commander-desc
   playTimeTracker: JobHeadClearSky
