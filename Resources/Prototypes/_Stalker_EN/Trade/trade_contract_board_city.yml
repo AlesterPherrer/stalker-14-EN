@@ -1,9 +1,9 @@
 ﻿- type: entity
   id: TradeContractBoardCity
   parent: Trademachine
-  name: доска контрактов
-  description: доска с заказами на поставки, охоту, ремонт и особые цели
-  suffix: ST, КВЕСТЫ
+  name: Contract Board
+  description: A board with requests for deliveries, hunts, repairs, and special targets.
+  suffix: ST, QUESTS
   components:
   - type: Sprite
     drawdepth: WallMountedItems

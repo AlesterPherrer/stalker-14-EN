@@ -1,172 +1,172 @@
-# Пул наград - Лёгкий
+# Reward pool - Easy
 - type: ncContractRewardPool
   id: ContractRewardEasy
   entries:
   - type: Item
-    id: MedkitAI2 # Аптечка АИ-2
+    id: MedkitAI2 # AI-2 medkit
     amount: { min: 3, max: 6 }
     weight: 3
   - type: Item
-    id: MedkitMilitary # Военная аптечка
+    id: MedkitMilitary # Military medkit
     amount: { min: 2, max: 5 }
     weight: 2
   - type: Item
-    id: MedkitScience # Научная аптечка
+    id: MedkitScience # Scientific medkit
     amount: { min: 1, max: 2 }
     weight: 1
   - type: Item
-    id: ClothingOuterArmorZaryaStalkerModifedType2 # Броня "Заря" (модиф. тип 2)
+    id: ClothingOuterArmorZaryaStalkerModifedType2 # "Zarya" armor (modified type 2)
     weight: 1
   - type: Item
-    id: ClothingOuterArmorZaryaStalkerModifedType1 # Броня "Заря" (модиф. тип 1)
+    id: ClothingOuterArmorZaryaStalkerModifedType1 # "Zarya" armor (modified type 1)
     weight: 1
   - type: Item
-    id: ClothingOuterArmorZaryaStalker # Броня "Заря"
+    id: ClothingOuterArmorZaryaStalker # "Zarya" armor
     weight: 1
   - type: Item
-    id: SetZaryaStalkerBuyableCrate # Набор "Заря" (ящик)
+    id: SetZaryaStalkerBuyableCrate # "Zarya" set (crate)
     weight: 1
   - type: Item
-    id: ClothingBeltWebbingHolsterStalkerZarya # Кобура "Заря"
+    id: ClothingBeltWebbingHolsterStalkerZarya # "Zarya" holster
     weight: 1
   - type: Item
-    id: ClothingBackpackStalkerZaryaGreen # Рюкзак "Заря" (зелёный)
+    id: ClothingBackpackStalkerZaryaGreen # "Zarya" backpack (green)
     weight: 1
   - type: Item
-    id: ClothingBackpackStalkerZaryaBlack # Рюкзак "Заря" (чёрный)
+    id: ClothingBackpackStalkerZaryaBlack # "Zarya" backpack (black)
     weight: 1
   - type: Item
-    id: STWeaponShotgunMP133 # Дробовик МП-133
+    id: STWeaponShotgunMP133 # MP-133 shotgun
     weight: 1
   - type: Item
-    id: STWeaponShotgunMossbergM88 # Дробовик Mossberg M88
+    id: STWeaponShotgunMossbergM88 # Mossberg M88 shotgun
     weight: 1
   - type: Item
-    id: ZoneArtifactDetectorResponse # Детектор "Отклик"
+    id: ZoneArtifactDetectorResponse # "Response" detector
     weight: 1
   - type: Item
-    id: LgbtKnife # Нож
+    id: LgbtKnife # knife
     weight: 1
   - type: Item
-    id: ClothingOuterArmorSSP24Topaz # Топаз
+    id: ClothingOuterArmorSSP24Topaz # Topaz
     weight: 1
   - type: Item
-    id: GrenadeVOG25 # Граната ВОГ-25
+    id: GrenadeVOG25 # VOG-25 grenade
     weight: 1
   - type: Item
-    id: GrenadeVOG25gvozd # Граната ВОГ-25 «Гвоздь»
+    id: GrenadeVOG25gvozd # VOG-25 "Nail" grenade
     weight: 1
   - type: Item
-    id: GrenadeVOG25P # Граната ВОГ-25П
+    id: GrenadeVOG25P # VOG-25P grenade
     weight: 1
   - type: Item
-    id: ClothingOuterArmorSpark # Броня «Искра»
+    id: ClothingOuterArmorSpark # "Spark" armor
     weight: 1
   - type: Item
-    id: ClothingOuterArmor6B2 # Бронежилет 6Б2
+    id: ClothingOuterArmor6B2 # 6B2 armored vest
     weight: 1
   - type: Item
-    id: ClothingOuterArmorZN1 # Броня ЗН-1
+    id: ClothingOuterArmorZN1 # ZN-1 armor
     weight: 1
   - type: Item
-    id: 545Mag45 # Магазин 5.45x39 (45 шт.)
+    id: 545Mag45 # 5.45x39 magazine (45)
     weight: 1
   - type: Item
-    id: 556Mag45 # Магазин 5.56 NATO (45 шт.)
+    id: 556Mag45 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponShotgunBenelliM4Super90 # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponShotgunBenelliM4Super90 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponShotgunCompact # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponShotgunCompact # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponSniperSKS # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponSniperSKS # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: ArmyProvisionCrate # Магазин 5.56 NATO (45 шт.)
+    id: ArmyProvisionCrate # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: ArmyMedkitMilitaryCrate # Магазин 5.56 NATO (45 шт.)
+    id: ArmyMedkitMilitaryCrate # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: ClothingBackpackDuffelCommonStalker # Магазин 5.56 NATO (45 шт.)
+    id: ClothingBackpackDuffelCommonStalker # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: SanitarCrate # Магазин 5.56 NATO (45 шт.)
+    id: SanitarCrate # 5.56 NATO magazine (45)
     weight: 1
 
-# Пул наград - Средний
+# Reward pool - Medium
 - type: ncContractRewardPool
   id: ContractRewardMedium
   entries:
   - type: Item
-    id: MedkitAI2 # Аптечка АИ-2
+    id: MedkitAI2 # AI-2 medkit
     amount: { min: 3, max: 6 }
     weight: 3
   - type: Item
-    id: MedkitMilitary # Военная аптечка
+    id: MedkitMilitary # Military medkit
     amount: { min: 3, max: 6 }
     weight: 2
   - type: Item
-    id: MedkitScience # Научная аптечка
+    id: MedkitScience # Scientific medkit
     amount: { min: 2, max: 3 }
     weight: 1
   - type: Item
-    id: ZoneArtifactDetectorSpruce # Детектор Хвоя
+    id: ZoneArtifactDetectorSpruce # Spruce detector
     weight: 1
   - type: Item
-    id: BoxArtcont # Контейнер для артефактов
+    id: BoxArtcont # artifact container
     amount: { min: 1, max: 3 }
     weight: 2
   - type: Item
-    id: ClothingBackpackDuffelBlackTacticStalker # Тактический рюкзак (чёрный)
+    id: ClothingBackpackDuffelBlackTacticStalker # tactical backpack (black)
     weight: 1
   - type: Item
-    id: STWeaponRifleRPK74 # РПК-74
+    id: STWeaponRifleRPK74 # RPK-74
     weight: 1
   - type: Item
-    id: STWeaponRifleSaiga739 # Сайга 739
+    id: STWeaponRifleSaiga739 # Saiga 739
     weight: 1
   - type: Item
-    id: STWeaponRifleGalatz # Галац
+    id: STWeaponRifleGalatz # Galatz
     weight: 1
   - type: Item
-    id: 6mmBuckshotBoxCink # Цинк Дроби
+    id: 6mmBuckshotBoxCink # buckshot ammo can
     amount: { min: 1, max: 2 }
     weight: 2
   - type: Item
-    id: LgbtKnife # Нож
+    id: LgbtKnife # knife
     weight: 1
   - type: Item
-    id: STWeaponSMGMP5 # Пистолет-пулемёт MP5
+    id: STWeaponSMGMP5 # SMG MP5
     weight: 1
   - type: Item
-    id: ClothingOuterArmorSSP24Topaz # Топаз
+    id: ClothingOuterArmorSSP24Topaz # Topaz
     weight: 2
   - type: Item
-    id: GrenadeVOG25 # Граната ВОГ-25
+    id: GrenadeVOG25 # VOG-25 grenade
     weight: 1
   - type: Item
-    id: GrenadeVOG25gvozd # Граната ВОГ-25 «Гвоздь»
+    id: GrenadeVOG25gvozd # VOG-25 "Nail" grenade
     weight: 1
   - type: Item
-    id: GrenadeVOG25P # Граната ВОГ-25П
+    id: GrenadeVOG25P # VOG-25P grenade
     weight: 1
   - type: Item
-    id: ClothingOuterArmorSpark # Броня «Искра»
+    id: ClothingOuterArmorSpark # "Spark" armor
     weight: 1
   - type: Item
-    id: ClothingOuterArmorMilitarySpark # Военная броня «Искра»
+    id: ClothingOuterArmorMilitarySpark # military "Spark" armor
     weight: 1
   - type: Item
-    id: ClothingOuterArmorZN1 # Броня ЗН-1
+    id: ClothingOuterArmorZN1 # ZN-1 armor
     weight: 1
   - type: Item
-    id: STWeaponShotgunSPAS # Дробовик SPAS-12
+    id: STWeaponShotgunSPAS # SPAS-12 shotgun
     weight: 1
   - type: Item
-    id: STWeaponRifleAKS74 # АКС-74
+    id: STWeaponRifleAKS74 # AKS-74
     weight: 1
   - type: Item
     id: 545Mag45
@@ -177,145 +177,146 @@
     amount: { min: 2, max: 3 }
     weight: 1
   - type: Item
-    id: STWeaponRifleAKM # АКС-74
+    id: STWeaponRifleAKM # AKS-74
     weight: 1
   - type: Item
-    id: STWeaponRifleAKMC # АКС-74
+    id: STWeaponRifleAKMC # AKS-74
     weight: 1
   - type: Item
-    id: STClothingOuterKorynd # АКС-74
+    id: STClothingOuterKorynd # AKS-74
     weight: 1
   - type: Item
-    id: STWeaponShotgunBenelliM4Super90 # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponShotgunBenelliM4Super90 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponSMGPP19919 # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponSMGPP19919 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponSMGStalkerCP2Veresk # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponSMGStalkerCP2Veresk # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponSMGStalkerCP2Veresk921 # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponSMGStalkerCP2Veresk921 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponSMGPP1901 # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponSMGPP1901 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: ClothingOuterArmorAborigineStalker # Магазин 5.56 NATO (45 шт.)
+    id: ClothingOuterArmorAborigineStalker # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: Veles # Магазин 5.56 NATO (45 шт.)
+    id: Veles # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponSMGPP2000 # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponSMGPP2000 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: ClothingBackpackDuffelSuperStalker # Магазин 5.56 NATO (45 шт.)
+    id: ClothingBackpackDuffelSuperStalker # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: ClothingBackpackDuffelSuperStalkerGray # Магазин 5.56 NATO (45 шт.)
+    id: ClothingBackpackDuffelSuperStalkerGray # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: ClothingOuterArmorSSP99 # Магазин 5.56 NATO (45 шт.)
+    id: ClothingOuterArmorSSP99 # 5.56 NATO magazine (45)
     weight: 1
 
 
 
-# Пул наград - Тяжёлый
+# Reward pool - Hard
 - type: ncContractRewardPool
   id: ContractRewardHard
   entries:
   - type: Item
-    id: STCraftSheetBrassT3 # Листы латуни Т3
+    id: STCraftSheetBrassT3 # T3 brass sheets
     amount: { min: 2, max: 5 }
     weight: 2
   - type: Item
-    id: ClothingOuterArmorSSP24Topaz # Топаз
+    id: ClothingOuterArmorSSP24Topaz # Topaz
     weight: 2
   - type: Item
-    id: ClothingOuterArmorSevaStalker # Бронекостюм "Сева"
+    id: ClothingOuterArmorSevaStalker # "SEVA" armored suit
     weight: 1
   - type: Item
-    id: ClothingOuterArmorMilitarySpark # Военная броня «Искра»
+    id: ClothingOuterArmorMilitarySpark # military "Spark" armor
     weight: 1
   - type: Item
-    id: STClothingOuterArmorLightPlateVestBaseANAgreen # Лёгкий плитник АНА (зелёный)
+    id: STClothingOuterArmorLightPlateVestBaseANAgreen # light ANA plate carrier (green)
     weight: 1
   - type: Item
-    id: STClothingOuterArmorLightPlateVestBaseANAgray # Лёгкий плитник АНА (серый)
+    id: STClothingOuterArmorLightPlateVestBaseANAgray # light ANA plate carrier (gray)
     weight: 1
   - type: Item
-    id: STWeaponShotgunSPAS # Дробовик SPAS-12
+    id: STWeaponShotgunSPAS # SPAS-12 shotgun
     weight: 1
   - type: Item
-    id: STWeaponRifleAKS74 # АКС-74
+    id: STWeaponRifleAKS74 # AKS-74
     weight: 1
   - type: Item
-    id: Dollar # доллары
+    id: Dollar # dollars
     amount: { min: 10, max: 20 }
     weight: 2
   - type: Item
-    id: MedkitElite # доллары
+    id: MedkitElite # dollars
     amount: { min: 4, max: 8 }
     weight: 1
   - type: Item
-    id: STWeaponRifleG36 # АКС-74
+    id: STWeaponRifleG36 # AKS-74
     weight: 1
   - type: Item
-    id: STWeaponRifleG36Alt # АКС-74
+    id: STWeaponRifleG36Alt # AKS-74
     weight: 1
   - type: Item
-    id: STClothingOuterKorynd # АКС-74
+    id: STClothingOuterKorynd # AKS-74
     weight: 1
   - type: Item
-    id: STClothingOuterIOTVGEN4 # АКС-74
+    id: STClothingOuterIOTVGEN4 # AKS-74
     weight: 1
   - type: Item
-    id: STWeaponShotgunSaiga12 # АКС-74
+    id: STWeaponShotgunSaiga12 # AKS-74
     weight: 1
   - type: Item
-    id: STWeaponSniperVepr # АКС-74
+    id: STWeaponSniperVepr # AKS-74
     weight: 1
   - type: Item
-    id: STClothingOuterArmorLightPlateVestBasePSZ7 # АКС-74
+    id: STClothingOuterArmorLightPlateVestBasePSZ7 # AKS-74
     weight: 1
   - type: Item
-    id: STWeaponRifleM14 # АКС-74
+    id: STWeaponRifleM14 # AKS-74
     weight: 1
   - type: Item
-    id: STWeaponShotgunBenelliM4Super90 # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponShotgunBenelliM4Super90 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponSMGPP19919 # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponSMGPP19919 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponSMGStalkerCP2Veresk # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponSMGStalkerCP2Veresk # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponSMGStalkerCP2Veresk921 # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponSMGStalkerCP2Veresk921 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STWeaponSMGPP1901 # Магазин 5.56 NATO (45 шт.)
+    id: STWeaponSMGPP1901 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: Veles # Магазин 5.56 NATO (45 шт.)
+    id: Veles # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: ZoneArtifactDetectorBarracuda # Магазин 5.56 NATO (45 шт.)
+    id: ZoneArtifactDetectorBarracuda # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: STZoneArtifactDetectorBarracudaBlueprint # Магазин 5.56 NATO (45 шт.)
+    id: STZoneArtifactDetectorBarracudaBlueprint # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: ClothingBackpackDuffelSuperStalker # Магазин 5.56 NATO (45 шт.)
+    id: ClothingBackpackDuffelSuperStalker # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: ClothingBackpackDuffelSuperStalkerGray # Магазин 5.56 NATO (45 шт.)
+    id: ClothingBackpackDuffelSuperStalkerGray # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: ClothingOuterArmorSSP99 # Магазин 5.56 NATO (45 шт.)
+    id: ClothingOuterArmorSSP99 # 5.56 NATO magazine (45)
     weight: 1
   - type: Item
-    id: StalkerMedBandShopCrate # Магазин 5.56 NATO (45 шт.)
+    id: StalkerMedBandShopCrate # 5.56 NATO magazine (45)
     weight: 1
+
 
