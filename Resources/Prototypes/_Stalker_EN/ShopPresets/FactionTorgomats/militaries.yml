@@ -551,7 +551,7 @@
       STBoltBagFilled: 50
       ZoneAnomalyDetectorAD1: 450 # T1
       ZoneAnomalyDetectorAD2: 1000 # T2
-      STLeadPlate: 200 # PvE Anti-Rad if abused raise price
+      #STLeadPlate: 200 # PvE Anti-Rad if abused raise price
 
   - name: shop-category-utilities
     priority: 10
