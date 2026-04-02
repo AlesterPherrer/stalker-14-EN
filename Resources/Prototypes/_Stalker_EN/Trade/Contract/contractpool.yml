@@ -123,9 +123,6 @@
     id: ClothingBackpackDuffelBlackTacticStalker # tactical backpack (black)
     weight: 1
   - type: Item
-    id: STWeaponRifleRPK74 # RPK-74
-    weight: 1
-  - type: Item
     id: STWeaponRifleSaiga739 # Saiga 739
     weight: 1
   - type: Item
