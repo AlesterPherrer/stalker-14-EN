@@ -31,7 +31,6 @@
     #back:
     #- Stuff
 
-
 - type: chameleonOutfit
   id: TechnicalAssistantChameleonOutfit
   job: TechnicalAssistant
