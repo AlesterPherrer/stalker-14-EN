@@ -2118,5 +2118,12 @@
   id: 224
   time: '2026-04-04T16:49:32.077543+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/754
+- author: dallaszzz & @TheOverwatchVoice & Nox
+  changes:
+  - message: Overhauled Rostok
+    type: Tweak
+  id: 225
+  time: '2026-04-04T20:17:56.156129+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/750
 Name: Stalker
 Order: -1
