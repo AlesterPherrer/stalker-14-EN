@@ -165,10 +165,6 @@ public abstract class SharedPortalSystem : EntitySystem
                     return;
                 }
             }
-            else
-            {
-                return;
-            }
         }
 
         // stalker-en-changes-end
