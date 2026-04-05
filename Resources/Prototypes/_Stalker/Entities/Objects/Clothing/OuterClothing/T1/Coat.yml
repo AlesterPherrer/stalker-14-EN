@@ -28,6 +28,8 @@
         Piercing: 0.95
         Heat: 0.95
         Radiation: 0.9
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: Storage
     maxItemSize: Normal
     blacklist:

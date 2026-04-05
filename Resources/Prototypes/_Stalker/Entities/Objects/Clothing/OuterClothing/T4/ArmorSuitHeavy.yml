@@ -45,6 +45,8 @@
         Shock: 0.9
         Psy: 1
         Compression: 0.8
+  - type: GrantsArtifactSlots
+    slots: 3 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.80
   - type: ToggleableClothing
@@ -84,6 +86,8 @@
         Caustic: 0.65
         Shock: 0.75
         Compression: 0.75
+  - type: GrantsArtifactSlots
+    slots: 4 # EN
 
 - type: entity
   parent: STClothingOuterArmorVeryHeavy

@@ -31,6 +31,8 @@
           Caustic: 0.5
           Shock: 0.5
           Compression: 0.5
+    - type: GrantsArtifactSlots
+      slots: 3 # EN
 
 - type: entity
   parent: STClothingHeadHatBase

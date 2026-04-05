@@ -38,6 +38,8 @@
         Caustic: 0.50
         Shock: 0.60
         Compression: 0.7
+  - type: GrantsArtifactSlots
+    slots: 4 # EN
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
@@ -109,6 +111,8 @@
       sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
+    - type: GrantsArtifactSlots
+      slots: 5 # EN
 
 - type: entity
   parent: STClothingOuterArmorSevaBase
@@ -123,6 +127,8 @@
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadHardsuitSevaHelmSci
       slot: head
+    - type: GrantsArtifactSlots
+      slots: 5 # EN
 
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
@@ -218,6 +224,8 @@
         Piercing: 0.80
         Compression: 0.95
         Psy: 0.7 # stalker EN change end
+  - type: GrantsArtifactSlots
+    slots: 5 # EN
 
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
@@ -243,6 +251,8 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/seva_cn.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/seva_cn.rsi
+  - type: GrantsArtifactSlots
+    slots: 5 # EN
 
 # Merc
 

@@ -22,5 +22,7 @@
         Blunt: 0.80
         Slash: 0.80
         Piercing: 0.55
+  - type: GrantsArtifactSlots
+    slots: 1 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.65

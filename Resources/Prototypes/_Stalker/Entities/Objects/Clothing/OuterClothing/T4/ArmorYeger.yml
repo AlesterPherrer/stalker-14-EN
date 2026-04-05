@@ -32,6 +32,8 @@
         Shock: 0.25
         Psy: 0.25
         Compression: 0.25
+  - type: GrantsArtifactSlots
+    slots: 3 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.90
 

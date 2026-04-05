@@ -29,6 +29,8 @@
             Piercing: 0.9
             Caustic: 0.8
             Shock: 0.65
+    - type: GrantsArtifactSlots
+      slots: 3 # EN
     - type: ClothingSpeedModifier
       walkModifier: 1
       sprintModifier: 1
@@ -88,6 +90,8 @@
       damage:
         types:
           Radiation: -0.25
+    - type: GrantsArtifactSlots
+      slots: 2 # EN
     - type: Storage
       maxItemSize: Large
       grid:

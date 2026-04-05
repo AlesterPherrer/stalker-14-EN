@@ -44,6 +44,8 @@
         Heat: 0.75
         Caustic: 0.80
         Shock: 0.75
+  - type: GrantsArtifactSlots
+    slots: 3 # EN
   - type: ExplosionResistance
     damageCoefficient: 0.8
   - type: Craftable
@@ -307,12 +309,15 @@
         Blunt: 3
         Slash: 6
         Piercing: 6
+        Radiation: 8 # EN
       coefficients:
         Blunt: 0.70
         Slash: 0.55
         Piercing: 0.65
         Radiation: 0.95
         Heat: 0.85
+  - type: GrantsArtifactSlots
+    slots: 0 # EN
   - type: Storage
     maxItemSize: Large
     blacklist:
@@ -438,6 +443,8 @@
         Heat: 0.7
         Caustic: 0.75
         Shock: 0.8
+  - type: GrantsArtifactSlots
+    slots: 2 # EN
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
