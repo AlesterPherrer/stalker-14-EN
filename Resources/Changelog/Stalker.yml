@@ -2217,5 +2217,13 @@
   id: 234
   time: '2026-04-07T22:41:30.553907+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/771
+- author: BELNAKBU
+  changes:
+  - message: Surrender emote in the hand gestures. For 6 second you get the pacified
+      alert and a white flag appears above you
+    type: Add
+  id: 235
+  time: '2026-04-07T22:48:13.969231+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/770
 Name: Stalker
 Order: -1
