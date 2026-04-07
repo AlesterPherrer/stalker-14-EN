@@ -58,8 +58,6 @@ namespace Content.Client.ContextMenu.UI
         protected override void Dispose(bool disposing)
         {
             // Stalker-EN-Change: Dispose sub-menu BEFORE base.Dispose() to avoid "Control has been disposed" assertion
-            // If we dispose base first, then try to dispose sub-menu, the sub-menu's cleanup
-            // (ModalRemoved -> RemoveAllChildren) fails because the parent is already disposed
             _subMenu?.Dispose();
             _subMenu = null;
             ParentMenu = null;
