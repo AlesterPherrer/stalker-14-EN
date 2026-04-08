@@ -74,7 +74,7 @@ entities:
     - type: ZoneArtifactSpawnerMapTier
       maxTier: 3
     - type: STAnomalyGeneratorTarget
-      optionsId: STRedForestGenerationOptions
+      optionsId: STJupiterPlantGenerationOptions
     - type: MapEmissionLightningTarget
     - type: LightCycle
       minLightLevel: 0.35
