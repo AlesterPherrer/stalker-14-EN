@@ -242,6 +242,14 @@
   - type: Portal
     cooldown: 5
 
+- type: entity
+  parent: MapTeleportBase
+  id: Yantar-YantarLabMono
+  name: Yantar-YantarLabMono
+  components:
+  - type: Portal
+    cooldown: 10
+
 # JupiterPlant
 
 - type: entity
@@ -269,6 +277,22 @@
   components:
   - type: LinkByString
     linkString: Mono-Yantar
+
+- type: entity
+  parent: MapTeleportBase
+  id: Yantar-Mono
+  name: Yantar-Mono
+  components:
+  - type: AccessReader
+    access: [["Monolith"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Yantar-MonoUncollide
+  name: Yantar-MonoUncollide
+  components:
+  - type: LinkByString
+    linkString: Yantar-Mono
 
 # Merc
 
