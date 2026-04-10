@@ -449,7 +449,6 @@
       ClothingMaskNeckBalaklava2: 10
       ClothingMaskNeckBalaklava3: 10
       # NECK
-      ClothingBandageStalkerKrest: 10
       ClothingNeckScarfBrown: 100
       ClothingNeckScarfGray: 100
       # faction
@@ -475,8 +474,6 @@
       ClothingTorsoTurtlenecksClearSky: 50
       # HANDS
       ClothingHandsGlovesFingerless: 30
-      ClothingHandsGlovesNitrile: 35
-      ClothingHandsGlovesLatex: 35
       ClothingHandsGlovesMercFingerless: 60
       # faction
       ClothingHandsGlovesLatex: 5
