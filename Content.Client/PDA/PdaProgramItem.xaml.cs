@@ -44,5 +44,8 @@ public sealed partial class PdaProgramItem : ContainerButton
 
         // Set minimum size to ensure content fits
         MinSize = new Vector2(70, 60);
+
+        // Ensure the item stretches to fill available space
+        HorizontalExpand = true;
     }
 }
