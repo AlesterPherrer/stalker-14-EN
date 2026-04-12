@@ -2334,5 +2334,12 @@
   id: 249
   time: '2026-04-12T01:44:32.094100+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/768
+- author: BELNAKBU
+  changes:
+  - message: Some fixes of ui pda
+    type: Add
+  id: 250
+  time: '2026-04-12T13:46:10.894841+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/800
 Name: Stalker
 Order: -1
