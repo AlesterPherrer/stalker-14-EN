@@ -138,6 +138,7 @@
         WeaponPistolStalkerAPS: 500
         STWeaponRevolverSWPC325TR: 700
         # Shotguns
+        STBaseWeaponShotgunTOZ106: 600 # T1
         STWeaponShotgunTOZ34: 100 # T2
         STWeaponShotgunMossbergM88: 500 # T2
         STWeaponShotgunMP153: 1000 # T3
@@ -169,6 +170,8 @@
         BasePPSHMag: 250
         BizonMag: 1100
           # Other
+        Base2070Mag: 30
+        TOZ106Mag5: 100
         STSTC96ClipEmpty: 120
         M1911Mag7: 150
         Base556Mag10: 80
@@ -183,6 +186,9 @@
     - name: shop-category-ammunition
       priority: 3
       items:
+        #20gauge
+        6.2mmBuckshotBox: 30 #T0
+        7.5mmBuckshotBox: 250 #T1
         # 7mm
         6mmBuckshotBox: 320 # T1
         7mmBuckshotBox: 75 # T0

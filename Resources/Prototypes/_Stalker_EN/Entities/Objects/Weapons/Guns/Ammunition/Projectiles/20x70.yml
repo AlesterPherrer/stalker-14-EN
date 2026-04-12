@@ -1,0 +1,61 @@
+#By Noguchi.47
+- type: entity
+  abstract: True
+  id: STBasePellet
+  categories: [ HideSpawnMenu ]
+  parent: STBaseBean
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: buckshot
+  - type: StaminaDamageOnCollide
+    damage: 0.1
+  - type: TimedDespawn
+    lifetime: 1
+
+# 6.2mm
+- type: entity
+  id: STPellet6.2mm
+  name: pellet 6.2mm
+  parent: STBasePellet
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 6
+        Mutant: 3
+
+- type: entity
+  id: Bullet6.2mmBuckshot
+  name: bullet (6.2mm buckshot)
+  parent: STPellet6.2mm
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: STPellet6.2mm
+    count: 8
+    spread: 14
+
+# 7.5mm
+- type: entity
+  id: STPellet7.5mm
+  name: pellet 7.5mm
+  parent: STBasePellet
+  components:
+  - type: Projectile
+    projectileClass: 1
+    damage:
+      types:
+        Piercing: 10
+        Mutant: 7
+
+- type: entity
+  id: Bullet7.5mmBuckshot
+  name: bullet (7.5mm buckshot)
+  parent: STPellet7.5mm
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: STPellet7.5mm
+    count: 9
+    spread: 12
