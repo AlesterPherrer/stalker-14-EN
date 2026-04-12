@@ -1,0 +1,216 @@
+# Character portrait prototypes for PDA notifications.
+#
+# TEXTURE LOCATION:
+#   Place PNG files in: /Textures/_Stalker_EN/Portraits/
+#   Recommended size: 128x128 pixels
+#
+# Each portrait is tied to ONE role (jobId).
+# To add multiple portraits for the same role, create separate entries with different IDs.
+# Use isFallback: true to mark the default portrait for a role.
+
+# ============================================
+# DEPARTMENT: Stalker
+# ============================================
+
+- type: characterPortrait
+  id: Portrait_StalkerRookie
+  name: "Rookie Stalker"
+  jobId: StalkerRookie
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/stalker_rookie.png"
+
+- type: characterPortrait
+  id: Portrait_Stalker
+  name: "Experienced Stalker"
+  jobId: Stalker
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/stalker.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerNeutral
+  name: "Neutral Stalker"
+  jobId: StalkerNeutral
+  texturePath: "/Textures/_Stalker_EN/Portraits/stalker_neutral.png"
+
+# ============================================
+# DEPARTMENT: StalkerAdvanced
+# ============================================
+
+- type: characterPortrait
+  id: Portrait_StalkerDolg
+  name: "Dolg Soldier"
+  jobId: StalkerDolg
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/dolg.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerHeadDolg
+  name: "Dolg Commander"
+  jobId: StalkerHeadDolg
+  texturePath: "/Textures/_Stalker_EN/Portraits/dolg_commander.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerFreedom
+  name: "Freedom Fighter"
+  jobId: StalkerFreedom
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/freedom.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerHeadFreedom
+  name: "Freedom Commander"
+  jobId: StalkerHeadFreedom
+  texturePath: "/Textures/_Stalker_EN/Portraits/freedom_commander.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerClearSky
+  name: "Clear Sky Researcher"
+  jobId: StalkerClearSky
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/clearsky.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerHeadClearSky
+  name: "Clear Sky Leader"
+  jobId: StalkerHeadClearSky
+  texturePath: "/Textures/_Stalker_EN/Portraits/clearsky_leader.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerJournalist
+  name: "Journalist"
+  jobId: StalkerJournalist
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/journalist.png"
+
+# ============================================
+# DEPARTMENT: StalkerBrigands
+# ============================================
+
+- type: characterPortrait
+  id: Portrait_StalkerBandit
+  name: "Bandit"
+  jobId: StalkerBandit
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/bandit.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerHeadBandit
+  name: "Bandit Leader"
+  jobId: StalkerHeadBandit
+  texturePath: "/Textures/_Stalker_EN/Portraits/bandit_leader.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerMercenary
+  name: "Mercenary"
+  jobId: StalkerMercenary
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/mercenary.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerHeadMercenary
+  name: "Mercenary Leader"
+  jobId: StalkerHeadMercenary
+  texturePath: "/Textures/_Stalker_EN/Portraits/mercenary_leader.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerRene
+  name: "Renegade"
+  jobId: StalkerRene
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/renegat.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerHeadRene
+  name: "Renegade Leader"
+  jobId: StalkerHeadRene
+  texturePath: "/Textures/_Stalker_EN/Portraits/renegat_leader.png"
+
+# ============================================
+# DEPARTMENT: StalkerOfficials
+# ============================================
+
+- type: characterPortrait
+  id: Portrait_Military
+  name: "Military Soldier"
+  jobId: Military
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/military.png"
+
+- type: characterPortrait
+  id: Portrait_MilitaryOfficer
+  name: "Military Officer"
+  jobId: MilitaryOfficer
+  texturePath: "/Textures/_Stalker_EN/Portraits/military_officer.png"
+
+- type: characterPortrait
+  id: Portrait_MilitaryHead
+  name: "Military Commander"
+  jobId: MilitaryHead
+  texturePath: "/Textures/_Stalker_EN/Portraits/military_commander.png"
+
+- type: characterPortrait
+  id: Portrait_Sci
+  name: "Scientist"
+  jobId: sci
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/sci.png"
+
+- type: characterPortrait
+  id: Portrait_SciDecan
+  name: "Science Dean"
+  jobId: sci_decan
+  texturePath: "/Textures/_Stalker_EN/Portraits/sci_decan.png"
+
+- type: characterPortrait
+  id: Portrait_SciRector
+  name: "Science Rector"
+  jobId: sci_rector
+  texturePath: "/Textures/_Stalker_EN/Portraits/sci_rector.png"
+
+# ============================================
+# DEPARTMENT: StalkerUnitedNations
+# ============================================
+
+- type: characterPortrait
+  id: Portrait_StalkerUN
+  name: "UN Representative"
+  jobId: StalkerUN
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/un.png"
+
+# ============================================
+# DEPARTMENT: StalkerReligius
+# ============================================
+
+- type: characterPortrait
+  id: Portrait_StalkerMonolith
+  name: "Monolith Fanatic"
+  jobId: StalkerMonolith
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/monolith.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerHeadMonolith
+  name: "Monolith Leader"
+  jobId: StalkerHeadMonolith
+  texturePath: "/Textures/_Stalker_EN/Portraits/monolith_leader.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerGreh
+  name: "Greh"
+  jobId: StalkerGreh
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/greh.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerPostulant
+  name: "Postulant"
+  jobId: StalkerPostulant
+  isFallback: true
+  texturePath: "/Textures/_Stalker_EN/Portraits/postulant.png"
+
+- type: characterPortrait
+  id: Portrait_StalkerBishop
+  name: "Bishop"
+  jobId: StalkerBishop
+  texturePath: "/Textures/_Stalker_EN/Portraits/bishop.png"

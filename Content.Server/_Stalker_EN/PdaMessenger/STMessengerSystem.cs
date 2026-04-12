@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.CartridgeLoader;
 using Content.Server.Database;
@@ -6,6 +7,8 @@ using Content.Server.Mind;
 using Content.Server.PDA;
 using Content.Server.PDA.Ringer;
 using Content.Shared._Stalker.Bands;
+using Content.Shared._Stalker.Portraits;
+using Content.Shared.Portraits;
 using Content.Shared._Stalker_EN.CCVar;
 using Content.Shared._Stalker_EN.CharacterRank;
 using Content.Shared._Stalker_EN.FactionRelations;
@@ -21,6 +24,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.PDA;
 using Content.Shared.PDA.Ringer;
+using Content.Shared.Players;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
@@ -445,7 +449,8 @@ public sealed partial class STMessengerSystem : EntitySystem
 
             // Send pop-up notification to DM recipient
             var bandIcon = GetBandIcon(server);
-            var dmEvent = new PdaDirectMessageEvent(senderName, content, bandIcon);
+            var portraitId = GetPortraitId(server);
+            var dmEvent = new PdaDirectMessageEvent(senderName, content, bandIcon, portraitId);
             if (_playerManager.TryGetSessionById(new NetUserId(contactKey.UserId), out var recipientSession))
             {
                 RaiseNetworkEvent(dmEvent, recipientSession);
@@ -466,7 +471,8 @@ public sealed partial class STMessengerSystem : EntitySystem
             if (channelProto.ID == "STGeneral")
             {
                 var bandIcon = GetBandIcon(server);
-                var generalEvent = new PdaGeneralMessageEvent(displayName, content, displayName, bandIcon);
+                var portraitId = GetPortraitId(server);
+                var generalEvent = new PdaGeneralMessageEvent(displayName, content, displayName, bandIcon, portraitId);
 
                 foreach (var (pdaUid, (cartridgeUid, _)) in _messengerPdas)
                 {
@@ -528,6 +534,33 @@ public sealed partial class STMessengerSystem : EntitySystem
                 return "stalker";
 
             return GetBandIconForBandProto(server.OwnerBand.Value);
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Gets the selected character portrait texture path for the player who owns the PDA.
+    /// Returns null if no portrait is selected and no fallback exists.
+    /// </summary>
+    private string? GetPortraitId(STMessengerServerComponent server)
+    {
+        // Try to get portrait from the mob holding the PDA
+        if (TryComp<TransformComponent>(server.Owner, out var xform))
+        {
+            var holder = xform.ParentUid;
+            if (holder.IsValid() && TryComp<CharacterPortraitComponent>(holder, out var portraitComp))
+            {
+                if (!string.IsNullOrEmpty(portraitComp.PortraitTexturePath))
+                    return portraitComp.PortraitTexturePath;
+            }
+        }
+
+        // Fallback: try on the PDA entity itself
+        if (TryComp<CharacterPortraitComponent>(server.Owner, out var pdaPortrait))
+        {
+            if (!string.IsNullOrEmpty(pdaPortrait.PortraitTexturePath))
+                return pdaPortrait.PortraitTexturePath;
         }
 
         return null;

@@ -118,7 +118,7 @@ public sealed class PdaNotificationUIController : UIController, IOnStateEntered<
         if (!_notificationsEnabled)
             return;
 
-        AddNotification(ev.Title, ev.Content, ev.Sender, ev.BandIcon);
+        AddNotification(ev.Title, ev.Content, ev.Sender, ev.BandIcon, ev.PortraitId);
     }
 
     private void OnDirectMessage(PdaDirectMessageEvent ev, EntitySessionEventArgs args)
@@ -126,13 +126,13 @@ public sealed class PdaNotificationUIController : UIController, IOnStateEntered<
         if (!_notificationsEnabled)
             return;
 
-        AddNotification("Direct Message", ev.Content, ev.Sender, ev.BandIcon);
+        AddNotification("Direct Message", ev.Content, ev.Sender, ev.BandIcon, ev.PortraitId);
     }
 
     /// <summary>
     /// Adds a new notification to the display.
     /// </summary>
-    public void AddNotification(string title, string content, string sender, string? factionIcon = null)
+    public void AddNotification(string title, string content, string sender, string? factionIcon = null, string? portraitId = null)
     {
         EnsureContainerAttached();
 
@@ -143,7 +143,7 @@ public sealed class PdaNotificationUIController : UIController, IOnStateEntered<
         if (content.Length > MaxContentLength)
             content = content[..MaxContentLength] + "...";
 
-        var notification = new PdaNotificationPanel(title, content, sender, factionIcon);
+        var notification = new PdaNotificationPanel(title, content, sender, factionIcon, portraitId);
         notification.Visible = true;
         notification.HorizontalExpand = false;
 

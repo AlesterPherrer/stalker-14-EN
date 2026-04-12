@@ -19,11 +19,18 @@ public sealed class PdaGeneralMessageEvent : EntityEventArgs
     /// </summary>
     public readonly string? BandIcon;
 
-    public PdaGeneralMessageEvent(string title, string content, string sender, string? bandIcon = null)
+    /// <summary>
+    /// Character portrait prototype ID for the sender's selected portrait.
+    /// If set, takes priority over BandIcon for notification display.
+    /// </summary>
+    public readonly string? PortraitId;
+
+    public PdaGeneralMessageEvent(string title, string content, string sender, string? bandIcon = null, string? portraitId = null)
     {
         Title = title;
         Content = content;
         Sender = sender;
         BandIcon = bandIcon;
+        PortraitId = portraitId;
     }
 }

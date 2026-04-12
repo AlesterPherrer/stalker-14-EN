@@ -24,10 +24,17 @@ public sealed class PdaDirectMessageEvent : EntityEventArgs
     /// </summary>
     public readonly string? BandIcon;
 
-    public PdaDirectMessageEvent(string sender, string content, string? bandIcon = null)
+    /// <summary>
+    /// Character portrait prototype ID for the sender's selected portrait.
+    /// If set, takes priority over BandIcon for notification display.
+    /// </summary>
+    public readonly string? PortraitId;
+
+    public PdaDirectMessageEvent(string sender, string content, string? bandIcon = null, string? portraitId = null)
     {
         Sender = sender;
         Content = content;
         BandIcon = bandIcon;
+        PortraitId = portraitId;
     }
 }

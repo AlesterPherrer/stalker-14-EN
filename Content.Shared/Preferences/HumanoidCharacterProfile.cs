@@ -4,6 +4,7 @@ using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Portraits;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
@@ -121,6 +122,13 @@ namespace Content.Shared.Preferences
         /// </summary>
         [DataField]
         public string STAliasColor { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Player-selected character portrait for PDA notifications and other UI elements.
+        /// Validated server-side against available portraits for the character's faction/job.
+        /// </summary>
+        [DataField]
+        public ProtoId<CharacterPortraitPrototype> SelectedPortraitId { get; set; } = string.Empty;
         // stalker-en-changes-end
 
         /// <summary>
@@ -168,7 +176,8 @@ namespace Content.Shared.Preferences
             bool changeable, // stalker-changes
             string stAliasAdjective = "", // stalker-en-changes
             string stAliasNoun = "", // stalker-en-changes
-            string stAliasColor = "") // stalker-en-changes
+            string stAliasColor = "", // stalker-en-changes
+            string selectedPortraitId = "") // stalker-en-changes: portrait
         {
             Name = name;
             FlavorText = flavortext;
@@ -187,6 +196,7 @@ namespace Content.Shared.Preferences
             STAliasAdjective = stAliasAdjective; // stalker-en-changes
             STAliasNoun = stAliasNoun; // stalker-en-changes
             STAliasColor = stAliasColor; // stalker-en-changes
+            SelectedPortraitId = selectedPortraitId; // stalker-en-changes: portrait
             var hasHighPrority = false;
             foreach (var (key, value) in _jobPriorities)
             {
@@ -220,7 +230,8 @@ namespace Content.Shared.Preferences
                 other.Changeable, // stalker-changes
                 other.STAliasAdjective, // stalker-en-changes
                 other.STAliasNoun, // stalker-en-changes
-                other.STAliasColor) // stalker-en-changes
+                other.STAliasColor, // stalker-en-changes
+                other.SelectedPortraitId) // stalker-en-changes: portrait
         {
         }
 
@@ -371,6 +382,14 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithSTAliasColor(string color)
         {
             return new(this) { STAliasColor = color };
+        }
+
+        /// <summary>
+        /// Returns a copy of this profile with the specified character portrait.
+        /// </summary>
+        public HumanoidCharacterProfile WithSelectedPortrait(string portraitId)
+        {
+            return new(this) { SelectedPortraitId = portraitId };
         }
         // stalker-en-changes-end
 
@@ -549,6 +568,7 @@ namespace Content.Shared.Preferences
             if (STAliasAdjective != other.STAliasAdjective) return false;
             if (STAliasNoun != other.STAliasNoun) return false;
             if (STAliasColor != other.STAliasColor) return false;
+            if (SelectedPortraitId != other.SelectedPortraitId) return false;
             // stalker-en-changes-end
             return Appearance.MemberwiseEquals(other.Appearance);
         }
@@ -709,6 +729,14 @@ namespace Content.Shared.Preferences
                 STAliasColor = STAliasColor[..16];
             // stalker-en-changes-end
 
+            // stalker-en-changes: portrait validation
+            // Validate selected portrait exists
+            if (!string.IsNullOrEmpty(SelectedPortraitId) &&
+                !prototypeManager.HasIndex<CharacterPortraitPrototype>(SelectedPortraitId))
+            {
+                SelectedPortraitId = string.Empty;
+            }
+
             // Checks prototypes exist for all loadouts and dump / set to default if not.
             var toRemove = new ValueList<string>();
 
@@ -818,6 +846,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(STAliasAdjective);
             hashCode.Add(STAliasNoun);
             hashCode.Add(STAliasColor);
+            hashCode.Add(SelectedPortraitId);
             // stalker-en-changes-end
             return hashCode.ToHashCode();
         }

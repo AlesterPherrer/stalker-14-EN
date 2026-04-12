@@ -20,14 +20,16 @@ public sealed partial class PdaNotificationPanel : PanelContainer
     private static readonly ISawmill Sawmill = Logger.GetSawmill("pda.notifications");
     private readonly IConfigurationManager _configManager;
     private readonly string? _bandId;
+    private readonly string? _portraitId;
     private bool _usePngIcons;
 
-    public PdaNotificationPanel(string title, string content, string sender, string? bandId = null)
+    public PdaNotificationPanel(string title, string content, string sender, string? bandId = null, string? portraitId = null)
     {
         RobustXamlLoader.Load(this);
 
         _configManager = IoCManager.Resolve<IConfigurationManager>();
         _bandId = bandId;
+        _portraitId = portraitId;
 
         // Subscribe to CVar changes
         _configManager.OnValueChanged(CCCCVars.PdaNotificationPngIcons, OnPngIconsChanged, invokeImmediately: true);
@@ -35,7 +37,7 @@ public sealed partial class PdaNotificationPanel : PanelContainer
         TitleLabel.Text = title;
         ContentLabel.SetMessage(FormattedMessage.FromMarkup(content));
 
-        // Display faction icon based on current setting
+        // Display icon based on settings
         UpdateFactionIcon();
 
         // Panel style - transparent background
@@ -53,6 +55,30 @@ public sealed partial class PdaNotificationPanel : PanelContainer
 
     private void UpdateFactionIcon()
     {
+        // Priority 1: Character portrait (if set)
+        if (!string.IsNullOrEmpty(_portraitId))
+        {
+            try
+            {
+                var resourceCache = IoCManager.Resolve<IResourceCache>();
+                // Portrait texture path is stored in the prototype, but we receive it as a direct path here
+                // The server resolves the prototype and sends the texture path
+                var texturePath = _portraitId;
+
+                if (resourceCache.TryGetResource<TextureResource>(texturePath, out var texture))
+                {
+                    FactionIcon.Texture = texture;
+                    FactionIcon.Visible = true;
+                    return;
+                }
+            }
+            catch
+            {
+                // Fall through to band icon
+            }
+        }
+
+        // Priority 2: Faction band icon
         if (_usePngIcons)
         {
             // PNG icon mode - map bandIcon to texture path (always returns a path, even for unknown)

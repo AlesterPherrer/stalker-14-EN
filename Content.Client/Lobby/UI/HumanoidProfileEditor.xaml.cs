@@ -1058,7 +1058,7 @@ namespace Content.Client.Lobby.UI
             JobOverride = jobProto;
             var session = _playerManager.LocalSession;
 
-            _loadoutWindow = new LoadoutWindow(Profile, roleLoadout, roleLoadoutProto, _playerManager.LocalSession, collection)
+            _loadoutWindow = new LoadoutWindow(Profile, roleLoadout, roleLoadoutProto, _playerManager.LocalSession, collection, jobProto)
             {
                 Title = Loc.GetString("loadout-window-title-loadout", ("job", $"{jobProto?.LocalizedName}")),
             };
@@ -1080,6 +1080,12 @@ namespace Content.Client.Lobby.UI
                 _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
                 Profile = Profile?.WithLoadout(roleLoadout);
                 ReloadPreview();
+            };
+
+            _loadoutWindow.OnPortraitSelected += portraitId =>
+            {
+                Profile = Profile?.WithSelectedPortrait(portraitId);
+                SetDirty();
             };
 
             _loadoutWindow.OnLoadoutUnpressed += (loadoutGroup, loadoutProto) =>

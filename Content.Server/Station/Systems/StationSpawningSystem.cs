@@ -12,10 +12,12 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
 using Content.Shared.PDA;
+using Content.Shared.Portraits;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
 using Content.Shared.Station;
+using Content.Shared._Stalker.Portraits;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
@@ -116,6 +118,14 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             var jobEntity = Spawn(prototype.JobEntity, coordinates);
             _mindSystem.MakeSentient(jobEntity);
 
+            // Set character portrait for PDA notifications (non-humanoid entities too)
+            if (profile != null && !string.IsNullOrEmpty(profile.SelectedPortraitId) &&
+                _prototypeManager.TryIndex<CharacterPortraitPrototype>(profile.SelectedPortraitId, out var portraitProto))
+            {
+                var portraitComp = EnsureComp<CharacterPortraitComponent>(jobEntity);
+                portraitComp.PortraitTexturePath = portraitProto.TexturePath;
+            }
+
             // Make sure custom names get handled, what is gameticker control flow whoopy.
             if (loadout != null)
             {
@@ -138,6 +148,14 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         {
             _humanoidSystem.LoadProfile(entity.Value, profile);
             _metaSystem.SetEntityName(entity.Value, profile.Name);
+
+            // Set character portrait for PDA notifications
+            if (!string.IsNullOrEmpty(profile.SelectedPortraitId) &&
+                _prototypeManager.TryIndex<CharacterPortraitPrototype>(profile.SelectedPortraitId, out var portraitProto))
+            {
+                var portraitComp = EnsureComp<CharacterPortraitComponent>(entity.Value);
+                portraitComp.PortraitTexturePath = portraitProto.TexturePath;
+            }
 
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
             {
