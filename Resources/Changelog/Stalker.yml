@@ -2371,5 +2371,14 @@
   id: 253
   time: '2026-04-13T12:14:06.712760+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/809
+- author: teecoding
+  changes:
+  - message: Stash no longer appears empty when opening personal storage
+    type: Fix
+  - message: Crash recovery banner no longer shows after normal server restart
+    type: Fix
+  id: 254
+  time: '2026-04-13T13:14:39.094384+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/810
 Name: Stalker
 Order: -1
