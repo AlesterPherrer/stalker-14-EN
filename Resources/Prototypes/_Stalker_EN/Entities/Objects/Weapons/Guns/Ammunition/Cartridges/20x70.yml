@@ -1,6 +1,6 @@
 #By Noguchi.47
 - type: entity
-  id: BaseShotgunBullet
+  id: BaseShotgunBullet20g
   name: shell (.50)
   parent: BaseCartridge
   abstract: true
@@ -22,7 +22,7 @@
 - type: entity
   id: Cartridge62mmBuckshot
   name: 20/70 6.2mm Buckshot
-  parent: BaseShotgunBullet
+  parent: BaseShotgunBullet20g
   components:
   - type: CartridgeAmmo
     proto: Bullet62mmBuckshot
@@ -41,7 +41,7 @@
 - type: entity
   id: Cartridge75mmBuckshot
   name: 20/70 7.5mm Buckshot
-  parent: BaseShotgunBullet
+  parent: BaseShotgunBullet20g
   components:
   - type: CartridgeAmmo
     proto: Bullet75mmBuckshot
