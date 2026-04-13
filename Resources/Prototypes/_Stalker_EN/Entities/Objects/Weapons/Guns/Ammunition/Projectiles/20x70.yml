@@ -15,7 +15,7 @@
 
 # 6.2mm
 - type: entity
-  id: STPellet6.2mm
+  id: STPellet62mm
   name: pellet 6.2mm
   parent: STBasePellet
   components:
@@ -26,7 +26,7 @@
         Mutant: 3
 
 - type: entity
-  id: Bullet6.2mmBuckshot
+  id: Bullet62mmBuckshot
   name: bullet (6.2mm buckshot)
   parent: STPellet6.2mm
   categories: [ HideSpawnMenu ]
@@ -38,7 +38,7 @@
 
 # 7.5mm
 - type: entity
-  id: STPellet7.5mm
+  id: STPellet75mm
   name: pellet 7.5mm
   parent: STBasePellet
   components:
@@ -50,9 +50,9 @@
         Mutant: 7
 
 - type: entity
-  id: Bullet7.5mmBuckshot
+  id: Bullet75mmBuckshot
   name: bullet (7.5mm buckshot)
-  parent: STPellet7.5mm
+  parent: STPellet75mm
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
