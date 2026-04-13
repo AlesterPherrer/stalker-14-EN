@@ -10,7 +10,7 @@
     magState: 20ammo
   - type: BallisticAmmoProvider
     capacity: 10
-    proto: Cartridge6.2mmBuckshot
+    proto: Cartridge62mmBuckshot
     whitelist:
       tags:
         - ShellTOZ106
@@ -30,7 +30,7 @@
   description: Only for TOZ-106 and come with 10 shells. Can penetrate T1 body armours.
   components:
   - type: BallisticAmmoProvider
-    proto: Cartridge7.5mmBuckshot
+    proto: Cartridge75mmBuckshot
   - type: Sprite
     layers:
     - state: 20gT1
