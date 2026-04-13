@@ -16,3 +16,4 @@ chat-emote-msg-st-grenade = shouts grenade!
 chat-emote-msg-st-medkit = asks for help!
 
 chat-emote-msg-st-cheekibreeki = goes CHEEKI BREEKI!!
+chat-emote-msg-st-svaboda = yells SVABODAAAA!!
