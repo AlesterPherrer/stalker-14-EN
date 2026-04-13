@@ -2349,5 +2349,19 @@
   id: 251
   time: '2026-04-12T22:25:52.106839+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/802
+- author: teecoding
+  changes:
+  - message: Crash recovery no longer duplicates items that were already in your stash
+    type: Fix
+  - message: Crash recovery button can no longer be clicked multiple times to duplicate
+      items
+    type: Fix
+  - message: Crash recovery button no longer appears after a normal server restart
+    type: Fix
+  - message: Crash recovery button no longer appears on shared stashes
+    type: Fix
+  id: 252
+  time: '2026-04-13T10:55:20.696597+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/808
 Name: Stalker
 Order: -1
