@@ -20,7 +20,7 @@
   - type: Appearance
 
 - type: entity
-  id: Cartridge6.2mmBuckshot
+  id: Cartridge62mmBuckshot
   name: 20/70 6.2mm Buckshot
   parent: BaseShotgunBullet
   components:
@@ -39,7 +39,7 @@
     state: "20g-T0"
 
 - type: entity
-  id: Cartridge7.5mmBuckshot
+  id: Cartridge75mmBuckshot
   name: 20/70 7.5mm Buckshot
   parent: BaseShotgunBullet
   components:
