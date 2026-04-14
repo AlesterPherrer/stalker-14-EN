@@ -2435,5 +2435,12 @@
   id: 261
   time: '2026-04-14T19:50:44.369901+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/813
+- author: Mooringt
+  changes:
+  - message: resprited military zenith
+    type: Tweak
+  id: 262
+  time: '2026-04-14T22:05:17.631425+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/807
 Name: Stalker
 Order: -1
