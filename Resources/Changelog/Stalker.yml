@@ -2459,5 +2459,14 @@
   id: 264
   time: '2026-04-15T00:05:01.594508+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/820
+- author: Roland410
+  changes:
+  - message: Adds lathe to renegade base.
+    type: Add
+  - message: Miscellaneous improvements to the CS base, until a proper remap is done.
+    type: Tweak
+  id: 265
+  time: '2026-04-15T03:39:35.377097+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/797
 Name: Stalker
 Order: -1
