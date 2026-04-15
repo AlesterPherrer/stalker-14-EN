@@ -35,9 +35,9 @@ public sealed partial class CharacterPortraitComponent : Component
     public string DisguisedPortraitPath = string.Empty;
 
     /// <summary>
-    /// If true, Clear Sky members use DisguisedPortraitPath for PDA icons.
-    /// Defaults to true (masked).
+    /// If true, faction members use DisguisedPortraitPath for PDA icons.
+    /// Defaults to false (not masked). Set to true only for factions with CanDisguiseAsStalker.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
-    public bool IsDisguised = true;
+    public bool IsDisguised = false;
 }

@@ -155,7 +155,22 @@ public sealed class CharacterPortraitSystem : EntitySystem
         }
 
         if (!canDisguise)
+        {
+            // If can't disguise, ensure IsDisguised is false
+            if (comp.IsDisguised)
+            {
+                comp.IsDisguised = false;
+                Dirty(uid, comp);
+            }
             return;
+        }
+
+        // Set IsDisguised to true for factions that can disguise
+        if (!comp.IsDisguised)
+        {
+            comp.IsDisguised = true;
+            Dirty(uid, comp);
+        }
 
         // Find Stalker portraits
         var stalkerPortraits = _protoManager.EnumeratePrototypes<CharacterPortraitPrototype>()
