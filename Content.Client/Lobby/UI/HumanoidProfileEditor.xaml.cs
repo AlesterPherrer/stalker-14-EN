@@ -573,10 +573,10 @@ namespace Content.Client.Lobby.UI
             PortraitSelector.OnPortraitSelected += _portraitSelectedHandler;
 
             // Validate current SelectedPortraitId - if it doesn't exist in available portraits, clear it
+            // stalker-en: use centralized validation method
             if (!string.IsNullOrEmpty(Profile?.SelectedPortraitId))
             {
-                var portraitPath = new Robust.Shared.Utility.ResPath(Profile.SelectedPortraitId);
-                var textureExists = portraits.Any(p => p.Textures.Contains(portraitPath) || p.Textures.Any(t => p.GetFullPath(t).ToString() == Profile.SelectedPortraitId));
+                var textureExists = Content.Shared._Stalker_EN.Portraits.CharacterPortraitPrototype.ValidatePortraitPath(Profile.SelectedPortraitId, portraits);
                 if (!textureExists)
                 {
                     Profile = Profile.WithSelectedPortrait(string.Empty);
@@ -584,15 +584,32 @@ namespace Content.Client.Lobby.UI
                 }
             }
 
-            // Check if current job is Clear Sky (can disguise as Stalker)
-            var isClearSky = _currentJobId == "StalkerClearSky";
+            // stalker-en-start
+            // Check if current job can disguise by finding STBandPrototype through Hierarchy
+            string? disguiseJobId = null;
 
-            if (isClearSky)
+            if (!string.IsNullOrEmpty(_currentJobId))
+            {
+                foreach (var bandProto in _prototypeManager.EnumeratePrototypes<Content.Shared._Stalker.Bands.STBandPrototype>())
+                {
+                    // Check if current job is in this band's hierarchy
+                    if (bandProto.Hierarchy.Values.Any(jobId => jobId.ToString() == _currentJobId))
+                    {
+                        // This band has the current job, check for disguise capability
+                        if (bandProto.DisguiseTargetJobId != null)
+                        {
+                            disguiseJobId = bandProto.DisguiseTargetJobId.ToString();
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(disguiseJobId))
             {
                 DisguisePortraitBox.Visible = true;
 
-                // Use cache for Stalker portraits (disguise)
-                const string disguiseJobId = "Stalker";
+                // Use cache for disguise portraits
                 if (!_portraitCache.TryGetValue(disguiseJobId, out var disguisePortraits))
                 {
                     disguisePortraits = new List<CharacterPortraitPrototype>();
@@ -615,8 +632,7 @@ namespace Content.Client.Lobby.UI
                 // Validate current DisguisePortraitId - if it doesn't exist in available portraits, clear it
                 if (!string.IsNullOrEmpty(Profile?.DisguisePortraitId))
                 {
-                    var portraitPath = new Robust.Shared.Utility.ResPath(Profile.DisguisePortraitId);
-                    var textureExists = disguisePortraits.Any(p => p.Textures.Contains(portraitPath) || p.Textures.Any(t => p.GetFullPath(t).ToString() == Profile.DisguisePortraitId));
+                    var textureExists = Content.Shared._Stalker_EN.Portraits.CharacterPortraitPrototype.ValidatePortraitPath(Profile.DisguisePortraitId, disguisePortraits);
                     if (!textureExists)
                     {
                         Profile = Profile.WithDisguisePortrait(string.Empty);
@@ -628,6 +644,7 @@ namespace Content.Client.Lobby.UI
             {
                 DisguisePortraitBox.Visible = false;
             }
+            // stalker-en-end
         }
 
         private string? GetHighestPriorityJobId()

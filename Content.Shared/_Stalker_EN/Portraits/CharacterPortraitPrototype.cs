@@ -85,4 +85,20 @@ public sealed partial class CharacterPortraitPrototype : IPrototype
 
         return path;
     }
+
+    /// <summary>
+    /// Validates if a portrait texture path exists in any of the given portrait prototypes.
+    /// Supports both relative and absolute paths.
+    /// </summary>
+    /// <param name="texturePath">The texture path to validate.</param>
+    /// <param name="portraits">List of portrait prototypes to search in.</param>
+    /// <returns>True if the texture path exists in any prototype, false otherwise.</returns>
+    public static bool ValidatePortraitPath(string texturePath, IEnumerable<CharacterPortraitPrototype> portraits)
+    {
+        if (string.IsNullOrEmpty(texturePath))
+            return false;
+
+        var portraitPath = new ResPath(texturePath);
+        return portraits.Any(p => p.Textures.Contains(portraitPath) || p.Textures.Any(t => p.GetFullPath(t).ToString() == texturePath));
+    }
 }

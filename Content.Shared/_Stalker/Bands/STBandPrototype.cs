@@ -52,5 +52,5 @@ public sealed class STBandPrototype : IPrototype
     [DataField]
     public ProtoId<JobPrototype>? DisguiseTargetJobId { get; set; }
 
-
+    // stalker-en: removed DisguiseTargetBandIcon - not used in current implementation
 }

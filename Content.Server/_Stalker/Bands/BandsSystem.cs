@@ -370,7 +370,7 @@ namespace Content.Server._Stalker.Bands
         private void OnInit(EntityUid uid, BandsComponent component, ComponentInit args)
         {
             EnsureComp<StatusIconComponent>(uid);
-            // stalker-en-changes start:
+            // stalker-en start:
             // Automatically apply patch swap on spawn for any faction with AltBand
             // This makes them spawn with the alternative patch instead of the original
             if (component is { AltBand: not null, CanChange: true })
@@ -388,7 +388,7 @@ namespace Content.Server._Stalker.Bands
 
                 Dirty(uid, component);
             }
-            // stalker-en-changes end
+            // stalker-en end
         }
 
         private void OnChange(Entity<BandsComponent> entity, ref ChangeBandEvent args)
@@ -399,7 +399,7 @@ namespace Content.Server._Stalker.Bands
             var comp = entity.Comp;
             if (comp.AltBand == null || !comp.CanChange)
                 return;
-            // stalker-en-changes start:
+            // stalker-en-start
             // Swap the band status icon and alt band name
             (comp.BandStatusIcon, comp.AltBand) = (comp.AltBand, comp.BandStatusIcon);
             comp.IsDisguised = !comp.IsDisguised;
@@ -410,7 +410,7 @@ namespace Content.Server._Stalker.Bands
                 portraitComp.IsDisguised = comp.IsDisguised;
                 Dirty(entity, portraitComp);
             }
-            // stalker-en-changes end
+            // stalker-en-end
             Dirty(entity);
             args.Handled = true;
         }

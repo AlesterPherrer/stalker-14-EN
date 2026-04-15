@@ -23,7 +23,7 @@ public sealed partial class BandsComponent : Component
     public bool CanChange;
 
     [DataField, AutoNetworkedField]
-    public bool IsDisguised; // stalker-en-changes: tracks whether using alternative patch
+    public bool IsDisguised; // stalker-en: tracks whether using alternative patch
 
     [DataField("actionChange"), ViewVariables(VVAccess.ReadOnly)]
     public string ActionChange = "ActionChangeBand";
