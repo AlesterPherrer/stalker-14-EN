@@ -28,7 +28,7 @@ public sealed class CharacterPortraitSystem : EntitySystem
         _sawmill = Logger.GetSawmill("st.portrait.system");
         SubscribeLocalEvent<CharacterPortraitComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<BandsComponent, ComponentAdd>(OnBandsComponentAdd);
-        SubscribeLocalEvent<PrototypeReloadedEventArgs>(OnPrototypeReloaded);
+        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypeReloaded);
         BuildCache();
     }
 
@@ -41,7 +41,7 @@ public sealed class CharacterPortraitSystem : EntitySystem
         ResolvePortrait(uid, comp);
     }
 
-    private void OnPrototypeReloaded(PrototypeReloadedEventArgs args)
+    private void OnPrototypeReloaded(PrototypesReloadedEventArgs args)
     {
         // Rebuild cache when prototypes are reloaded to ensure consistency.
         BuildCache();
@@ -111,7 +111,7 @@ public sealed class CharacterPortraitSystem : EntitySystem
 
             // Support both legacy full paths and new relative paths for compatibility
             var textureExists = _protoManager.EnumeratePrototypes<CharacterPortraitPrototype>()
-                .Any(p => p.Textures.Any(t => t == currentPath || p.GetFullPath(t) == currentPath));
+                .Any(p => p.Textures.Any(t => t == currentPath || CharacterPortraitPrototype.GetFullPath(t) == currentPath));
 
             if (!textureExists)
             {
