@@ -1,6 +1,7 @@
 using Content.Server.Actions;
 using Content.Server.Popups;
 using Content.Shared.Actions;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Interaction;
 using Content.Shared.Light;
 using Content.Shared.Light.Components;
@@ -55,12 +56,22 @@ namespace Content.Server.Light.EntitySystems
 
         private void OnEntInserted(Entity<HandheldLightComponent> ent, ref EntInsertedIntoContainerMessage args)
         {
+            // Skip if ItemSlotsComponent is not yet initialized during map loading
+            if (!TryComp<ItemSlotsComponent>(ent.Owner, out var itemSlots) ||
+                MetaData(ent.Owner, itemSlots).EntityLifeStage < EntityLifeStage.MapInitialized)
+                return;
+
             // Not guaranteed to be the correct container for our slot, I don't care.
             UpdateLevel(ent);
         }
 
         private void OnEntRemoved(Entity<HandheldLightComponent> ent, ref EntRemovedFromContainerMessage args)
         {
+            // Skip if ItemSlotsComponent is not yet initialized during map loading
+            if (!TryComp<ItemSlotsComponent>(ent.Owner, out var itemSlots) ||
+                MetaData(ent.Owner, itemSlots).EntityLifeStage < EntityLifeStage.MapInitialized)
+                return;
+
             // Ditto above
             UpdateLevel(ent);
         }
