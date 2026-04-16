@@ -174,7 +174,7 @@
         ##-------------------------------------------
         ClothingBackpackTacticBlackRadStalker: 200 # T2
         ##-------------------------------------------
-        ClothingBackpackDuffelCommonStalker: 600 #T3 |pvp backpack
+        ClothingBackpackDuffelCommonStalker: 750 #T3 |pvp backpack
         ClothingBackpackMercStalker: 500 # T3 |pve backpack
         ClothingBackpackStalkerZaryaBlack: 300 # T3 |pvp backpack
           # Belts
