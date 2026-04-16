@@ -145,8 +145,16 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             // stalker-en-start
             // Set character portrait for PDA notifications.
             // If player selected one — validate and use it directly as texture path.
-            // Otherwise, system picks a random fallback for the role.
+            // Otherwise, BandsComponent ComponentAdd will resolve portrait with proper band context.
             var portraitComp = EnsureComp<CharacterPortraitComponent>(entity.Value);
+
+            // Set PortraitJobId from job prototype for proper portrait resolution
+            if (prototype != null)
+            {
+                portraitComp.PortraitJobId = prototype.ID;
+                Dirty(entity.Value, portraitComp);
+            }
+
             if (!string.IsNullOrEmpty(profile.SelectedPortraitId))
             {
                 // Validate that the texture path exists in any portrait prototype
@@ -160,16 +168,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
                     portraitComp.PortraitTexturePath = profile.SelectedPortraitId;
                     Dirty(entity.Value, portraitComp);
                 }
-                else
-                {
-                    // Invalid texture path, let system pick random fallback
-                    _portraitSystem.ResolvePortrait(entity.Value, portraitComp);
-                }
-            }
-            else
-            {
-                // No portrait selected, let system pick random fallback
-                _portraitSystem.ResolvePortrait(entity.Value, portraitComp);
             }
 
             // Resolve disguise portrait for factions that can disguise (e.g. Clear Sky)

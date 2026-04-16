@@ -22,17 +22,27 @@ public sealed class CharacterPortraitSystem : EntitySystem
         base.Initialize();
         _sawmill = Logger.GetSawmill("st.portrait.system");
         SubscribeLocalEvent<CharacterPortraitComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<CharacterPortraitComponent, ComponentAdd>(OnComponentAdd);
+        SubscribeLocalEvent<BandsComponent, ComponentAdd>(OnBandsComponentAdd);
+        // OnComponentAdd removed - only MapInit for NPCs, players handled by StationSpawningSystem
     }
 
     private void OnMapInit(EntityUid uid, CharacterPortraitComponent comp, MapInitEvent args)
     {
+        // Resolve portrait for NPCs on map initialization
+        // Players are handled by StationSpawningSystem with explicit call
         ResolvePortrait(uid, comp);
     }
 
-    private void OnComponentAdd(EntityUid uid, CharacterPortraitComponent comp, ComponentAdd args)
+    private void OnBandsComponentAdd(EntityUid uid, BandsComponent comp, ComponentAdd args)
     {
-        ResolvePortrait(uid, comp);
+        // When BandsComponent is added, resolve portrait with proper band context
+        // This is needed because BandsComponent is set via AddComponentSpecial after SpawnPlayerMob
+        if (!TryComp<CharacterPortraitComponent>(uid, out var portraitComp))
+            return;
+
+        // Clear any stale portrait path set before BandsComponent was available
+        portraitComp.PortraitTexturePath = string.Empty;
+        ResolvePortrait(uid, portraitComp);
     }
 
     /// <summary>
