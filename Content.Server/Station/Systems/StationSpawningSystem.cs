@@ -144,34 +144,37 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
             // stalker-en-start
             // Set character portrait for PDA notifications.
-            // If player selected one — validate and use it directly as texture path.
-            // Otherwise, BandsComponent ComponentAdd will resolve portrait with proper band context.
+            // Portrait resolution flow:
+            // 1. Set PortraitJobId from job prototype (used as fallback if BandsComponent not available).
+            // 2. If player selected a portrait, validate and use it directly.
+            // 3. BandsComponent ComponentAdd will resolve portrait with proper band context after DoJobSpecials.
             var portraitComp = EnsureComp<CharacterPortraitComponent>(entity.Value);
 
-            // Set PortraitJobId from job prototype for proper portrait resolution
+            // Set PortraitJobId from job prototype for proper portrait resolution.
+            // This is used as fallback when BandsComponent is not available or as context for portrait selection.
             if (prototype != null)
             {
                 portraitComp.PortraitJobId = prototype.ID;
                 Dirty(entity.Value, portraitComp);
             }
 
+            // If player selected a portrait, validate and use it directly.
+            // Player-selected portraits are preserved and not re-resolved by BandsComponent ComponentAdd.
             if (!string.IsNullOrEmpty(profile.SelectedPortraitId))
             {
-                // Validate that the texture path exists in any portrait prototype
                 var portraitPath = new Robust.Shared.Utility.ResPath(profile.SelectedPortraitId);
                 var textureExists = _prototypeManager.EnumeratePrototypes<CharacterPortraitPrototype>()
                     .Any(p => p.Textures.Contains(portraitPath) || p.Textures.Any(t => p.GetFullPath(t).ToString() == profile.SelectedPortraitId));
 
                 if (textureExists)
                 {
-                    // Use the selected texture path directly
                     portraitComp.PortraitTexturePath = profile.SelectedPortraitId;
                     Dirty(entity.Value, portraitComp);
                 }
             }
 
-            // Resolve disguise portrait for factions that can disguise (e.g. Clear Sky)
-            // DisguisePortraitId stores the texture path directly, not a ProtoId
+            // Set disguise portrait for factions that can disguise (e.g., Clear Sky).
+            // DisguisePortraitId stores the texture path directly, not a ProtoId.
             if (!string.IsNullOrEmpty(profile.DisguisePortraitId))
             {
                 var portraitPath = new Robust.Shared.Utility.ResPath(profile.DisguisePortraitId);
