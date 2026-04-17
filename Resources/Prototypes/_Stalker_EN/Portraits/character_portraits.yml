@@ -53,6 +53,7 @@
     - "/Textures/_Stalker_EN/Portraits/neutral/neut_4.png"
     - "/Textures/_Stalker_EN/Portraits/neutral/neut_5.png"
     - "/Textures/_Stalker_EN/Portraits/neutral/neut_6.png"
+    # TO-DO: make an yml anchors to for case when you want to add the portraits from one job to another
     - "/Textures/_Stalker_EN/Portraits/journalist/journalist_1.png"
 
 # MARK: Journalist (Department: StalkerAdvanced)
@@ -133,6 +134,7 @@
     - "/Textures/_Stalker_EN/Portraits/clearsky/clearsky_1.png"
     - "/Textures/_Stalker_EN/Portraits/clearsky/clearsky_2.png"
     - "/Textures/_Stalker_EN/Portraits/clearsky/clearsky_3.png"
+    - "/Textures/_Stalker_EN/Portraits/clearsky/clearsky_head_1.png"
 
 - type: characterPortrait
   id: Portrait_StalkerHeadClearSky
@@ -140,6 +142,9 @@
   bandId: STClearSkyBand
   jobId: StalkerHeadClearSky
   textures:
+    - "/Textures/_Stalker_EN/Portraits/clearsky/clearsky_1.png"
+    - "/Textures/_Stalker_EN/Portraits/clearsky/clearsky_2.png"
+    - "/Textures/_Stalker_EN/Portraits/clearsky/clearsky_3.png"
     - "/Textures/_Stalker_EN/Portraits/clearsky/clearsky_head_1.png"
 
 # MARK: Bandit (Department: StalkerBrigands)
