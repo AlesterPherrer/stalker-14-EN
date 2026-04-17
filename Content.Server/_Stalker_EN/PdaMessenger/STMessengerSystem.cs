@@ -501,6 +501,8 @@ public sealed partial class STMessengerSystem : EntitySystem
                 var isDisguised = GetIsDisguised(server);
                 var generalEvent = new PdaGeneralMessageEvent(displayName, content, displayName, bandIcon, portraitId, isDisguised);
 
+                var notifiedSessions = new HashSet<ICommonSession>();
+
                 foreach (var (pdaUid, (cartridgeUid, _)) in _messengerPdas)
                 {
 
@@ -511,14 +513,18 @@ public sealed partial class STMessengerSystem : EntitySystem
                     var mobUid = pdaComp.PdaOwner.Value;
 
                     // 2. Find the mob's Mind to get the player's UserId
-                    if (_mind.TryGetMind(mobUid, out var _, out var mindComp))
-                    {
-                        // 4. Find the session by UserId
-                        if (_playerManager.TryGetSessionById(mindComp.UserId, out var session))
-                        {
-                            RaiseNetworkEvent(generalEvent, session!);
-                        }
-                    }
+                    if (!_mind.TryGetMind(mobUid, out _, out var mindComp))
+                        continue;
+
+                    // 3. Find the session by UserId
+                    if (!_playerManager.TryGetSessionById(mindComp.UserId, out var session))
+                        continue;
+
+                    // 4. Skip if this session already received the notification
+                    if (!notifiedSessions.Add(session))
+                        continue;
+
+                    RaiseNetworkEvent(generalEvent, session);
                 }
             }
         }
