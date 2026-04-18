@@ -2581,5 +2581,14 @@
   id: 277
   time: '2026-04-18T15:31:27.972360+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/826
+- author: dallaszzz
+  changes:
+  - message: Gives freedom a svaboda emote
+    type: Add
+  - message: fixes monolith having the wrong backup lines
+    type: Fix
+  id: 278
+  time: '2026-04-18T15:37:40.475469+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/814
 Name: Stalker
 Order: -1
