@@ -37,8 +37,10 @@
             "name": "rugged_on"
         },
         {
+            "name": "rugged_off"
+        },
+        {
             "name": "old_pda"
         }
-		
     ]
 }
