@@ -112,7 +112,7 @@
     FoodMeatSTBoarJerkedSingle: 150
     FoodMeatSTBearJerkedSingle: 265
     FoodMeatSTSuckerJerkedSingle: 675
-    STFoodMeatSalo: 75
+    STFoodMeatSalo: 50
 
 # Cooking
     FoodSTFreshCheese: 100
