@@ -2612,5 +2612,12 @@
   id: 281
   time: '2026-04-19T13:16:24.541009+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/840
+- author: dallaszzz
+  changes:
+  - message: particle system
+    type: Add
+  id: 282
+  time: '2026-04-19T15:05:28.889214+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/841
 Name: Stalker
 Order: -1
