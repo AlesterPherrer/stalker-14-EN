@@ -487,8 +487,7 @@
         AcousticGuitarInstrument: 500
         AccordionInstrument: 500
         HarmonicaInstrument: 500
-        CardBin: 100
-        PokerCardBin: 150
+        CardDeckBlack: 100
 
     - name: shop-category-blueprints
       priority: 13

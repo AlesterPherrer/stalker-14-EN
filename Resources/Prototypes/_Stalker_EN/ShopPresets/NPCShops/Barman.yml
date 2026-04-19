@@ -117,7 +117,7 @@
     FoodMeatSTRatJerked: 20 # 2x the profit!!!
     FoodMeatSTDogJerkedSingle: 150
     FoodMeatSTBoarJerkedSingle: 200
-    FoodMeatSTBearJerkedSingle: 350 # 615 per bear but thats what youre paying in ammo costs anyway
+    FoodMeatSTBearJerkedSingle: 350
     FoodMeatSTSuckerJerkedSingle: 900
 
     # Cooking
@@ -584,8 +584,7 @@
         AcousticGuitarInstrument: 500
         AccordionInstrument: 500
         HarmonicaInstrument: 500
-        CardBin: 100
-        PokerCardBin: 150
+        CardDeckBlack: 100
 
     - name: shop-category-blueprints
       priority: 15
