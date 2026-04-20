@@ -1,9 +1,12 @@
 using Content.Client.UserInterface.Fragments;
+using Content.Shared._Stalker.PdaMessenger;
 using Content.Shared._Stalker_EN.PdaMessenger;
 using Content.Shared.CartridgeLoader;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
+using Robust.Shared.Maths;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Timing;
 
 namespace Content.Client._Stalker_EN.PdaMessenger;
 
@@ -62,6 +65,7 @@ public sealed partial class STMessengerUi : UIFragment
         _root.AddChild(_channelPage);
         _root.AddChild(_composePage);
 
+
         _channelPage.Visible = false;
         _composePage.Visible = false;
 
@@ -81,6 +85,11 @@ public sealed partial class STMessengerUi : UIFragment
         _mainPage.OnToggleMute += channelId =>
         {
             userInterface.SendPredictedMessage(new CartridgeUiMessage(new STMessengerToggleMuteEvent(channelId)));
+        };
+
+        _mainPage.OnToggleRandomName += randomName =>
+        {
+            userInterface.SendMessage(new CartridgeUiMessage(new STMessengerToggleRandomNameEvent(randomName)));
         };
 
         _channelPage.OnBack += () => NavigateToMain();
@@ -172,6 +181,7 @@ public sealed partial class STMessengerUi : UIFragment
 
         _mainPage?.UpdateState(messengerState);
 
+
         if (_currentChatId is not null && _channelPage is { Visible: true })
         {
             var chat = FindChat(messengerState, _currentChatId);
@@ -185,7 +195,7 @@ public sealed partial class STMessengerUi : UIFragment
         _currentChatId = chatId;
 
         // Tell server which chat we're viewing (for lazy message loading)
-        _userInterface?.SendPredictedMessage(new CartridgeUiMessage(new STMessengerViewChatEvent(chatId)));
+        _userInterface?.SendMessage(new CartridgeUiMessage(new STMessengerViewChatEvent(chatId)));
 
         _mainPage!.Visible = false;
         _composePage!.Visible = false;
@@ -200,7 +210,7 @@ public sealed partial class STMessengerUi : UIFragment
         _composePage!.Visible = false;
         _mainPage!.Visible = true;
 
-        _userInterface?.SendPredictedMessage(new CartridgeUiMessage(new STMessengerViewChatEvent(null)));
+        _userInterface?.SendMessage(new CartridgeUiMessage(new STMessengerViewChatEvent(null)));
     }
 
     private void ShowCompose(string chatId, string? initialContent = null)
