@@ -1,0 +1,31 @@
+- type: particleEffect
+  id: MuzzleFlashBase
+  sprite:
+    sprite: _Starfall/Particles/generic.rsi
+    state: soft_dot_big
+  alphaOverLifetime:
+    - time: 0
+      value: 0.08
+    - time: 1.0
+      value: 0
+  startColor: "#282828"
+  lifetime: 1
+  lifetimeVariance: 0
+  speed: 6
+  speedVariance: 6
+  particleSize: 0.8
+  sizeVariance: 0.2
+  stretchFactor: 0.1
+  maxCount: 10
+  burst: true
+  duration: 3
+  gravity: 0
+  drag: 5
+  spreadAngle: 10
+  emitAngle: 0
+  startRotationVariance: 0
+  rotationSpeed: 1
+  rotationSpeedVariance: 0
+  inheritVelocity: 1
+  shape:
+    type: point
