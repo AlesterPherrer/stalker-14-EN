@@ -2647,5 +2647,14 @@
   id: 285
   time: '2026-04-20T21:00:18.638670+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/847
+- author: BELNAKBU
+  changes:
+  - message: New verb for comparing armor.
+    type: Add
+  - message: Now you can compare armor stats at shops.
+    type: Tweak
+  id: 286
+  time: '2026-04-20T21:03:31.681754+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/853
 Name: Stalker
 Order: -1
