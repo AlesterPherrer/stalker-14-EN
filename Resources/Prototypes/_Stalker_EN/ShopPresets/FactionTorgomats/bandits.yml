@@ -180,6 +180,10 @@
     longrangemetaldetector: 900
     Binocularus1: 200
 
+  # (Barman's price * 0.85[Faction decrease]) * 0.75[Antag rate] = Price, rounded up
+  # Bandits are going to get murdered, so a lower rate is applied to them compared to Bar
+
+
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -193,23 +197,23 @@
         WeaponPistolStalkerAPS: 500
         STWeaponRevolverSWPC325TR: 700
         # Shotguns
-        STBaseWeaponShotgunTOZ106: 600 # T1
+        STBaseWeaponShotgunTOZ106: 550 # T1
         STWeaponShotgunTOZ34: 100 # T2
-        STWeaponShotgunMossbergM88: 500 # T2
-        STWeaponShotgunMP153: 1000 # T3
+        STWeaponShotgunMossbergM88: 400 # T2
+        STWeaponShotgunMP153: 1100 # T3
         # Rifles
-        STWeaponRifleSaiga545: 1200
-        STWeaponRifleAKS74U: 2000
-        STWeaponRifleL85: 3000
-        STWeaponRifleAKS74: 3000
+        STWeaponRifleSaiga545: 1150
+        STWeaponRifleAKS74U: 1300
+        STWeaponRifleL85: 1500
+        STWeaponRifleAKS74: 2700
         # SMGs
-        STWeaponSMGMP5: 2000
-        STWeaponSMGPPSh41Band: 1250
-        STWeaponSMGMP40: 500
-        STWeaponSMGPP19: 3000
+        STWeaponSMGMP5: 1700
+        STWeaponSMGPPSh41Band: 1600
+        STWeaponSMGMP40: 650
+        STWeaponSMGPP19: 2200
         # Snipers
         STWeaponSniperMosin: 1000
-        STWeaponSniperSKS: 1500
+        STWeaponSniperSKS: 1200
 
     - name: shop-category-magazines
       priority: 2
