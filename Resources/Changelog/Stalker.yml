@@ -2698,5 +2698,12 @@
   id: 291
   time: '2026-04-21T18:22:35.175395+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/848
+- author: dallaszzz
+  changes:
+  - message: New muzzle smoke particles and muzzle flash sprite
+    type: Add
+  id: 292
+  time: '2026-04-21T21:59:46.317390+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/860
 Name: Stalker
 Order: -1
