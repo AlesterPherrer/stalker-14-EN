@@ -191,9 +191,11 @@
         # Melee
         StalkerBallBat: 50
         # Pistols
-        STWeaponPistolC96: 1200
+        STWeaponPistolC96: 400 # literally a worse HiPower :skull:
         STWeaponPistolM1911Chrome: 1500
-        WeaponPistolStalkerTT: 250
+        WeaponPistolStalkerTT: 50
+        WeaponPistolStalkerPM: 50
+        STWeaponPistolHiPower: 400
         WeaponPistolStalkerAPS: 500
         STWeaponRevolverSWPC325TR: 700
         # Shotguns
@@ -220,27 +222,30 @@
       items:
           # 5,45x39
         Base545Mag10: 50 #T1
-        545Mag20: 220 #T2
-        545Mag30: 400 #T3
+        545Mag20: 160 #T2
+        545Mag30: 320 #T3
+          # 5,56x45
+        Base556Mag10: 50
+        556Mag20: 160
+        556Mag30: 320
           # Smg
         MP40Mag: 100
-        BaseMP5Mag: 200
-        PPSHDrum: 1000
-        BasePPSHMag: 250
-        BizonMag: 1100
+        BaseMP5Mag: 175
+        PPSHDrum: 1275
+        BasePPSHMag: 230
+        BizonMag: 1070
           # Other
-        Base2070Mag: 30
-        TOZ106Mag5: 100
-        STSTC96ClipEmpty: 120
-        M1911Mag7: 150
-        Base556Mag10: 80
-        556Mag20: 220
-        556Mag30: 400
-        TTMag: 100
-        STSpeedLoader45ACPEmpty: 150
-        STSpeedLoader357MagnumEmpty: 160
-        BaseAPSMag: 100
-        Base751Mag10: 200
+        BasePMMag: 10
+        HiPowerMag13: 90
+        Base2070Mag: 20
+        TOZ106Mag5: 65
+        STSTC96ClipEmpty: 90
+        M1911Mag7: 90
+        TTMag: 10
+        STSpeedLoader45ACPEmpty: 65
+        STSpeedLoader357MagnumEmpty: 105
+        BaseAPSMag: 150
+        Base751Mag10: 415
 
     - name: shop-category-ammunition
       priority: 3
