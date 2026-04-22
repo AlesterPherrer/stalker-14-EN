@@ -521,8 +521,13 @@
       DetectorVelesBlueprint: 6500
       DetectorSvarogBlueprint: 20000
 
-  - name: Smokables #explained using D&D lifestyle expenses
+  - name: shop-category-tools
     priority: 14
+    items:
+      CraftChemicalCleaningKit: 10000
+
+  - name: Smokables #explained using D&D lifestyle expenses
+    priority: 15
     items:
       CigPackBub: 250 #comfortable
       CigPackGreen: 150 #poor

@@ -396,10 +396,8 @@
         ClothingBeltPocketPouch: 450
         ClothingBeltHerbalistPouch: 450
         ClothingBeltCrafterStalker: 3000
-        MedkitCMSStalker: 250 # T1
-        MedkitGrizzlyStalker: 850 # T2
-        # Other
-        ClothingBackpackForestryRig: 500
+        StalkerGunCaseStandard: 1200 # im really not sure what a fair price is for these
+        #StalkerGunCaseDouble: 2550
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 9

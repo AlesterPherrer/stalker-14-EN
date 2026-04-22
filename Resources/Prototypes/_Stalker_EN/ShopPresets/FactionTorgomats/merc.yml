@@ -239,6 +239,8 @@
         # Medical Storage
         MedkitCMSStalker: 450
         MedkitGrizzlyStalker: 850
+        # Other
+        StalkerGunCaseMercenary: 1800
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8

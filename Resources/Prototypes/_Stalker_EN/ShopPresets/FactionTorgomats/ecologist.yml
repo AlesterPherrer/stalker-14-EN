@@ -443,8 +443,13 @@
         STZoneArtifactDetectorBearBlueprint: 25000
         # STZoneArtifactDetectorWolfhoundBlueprint: 40000 Disabled for now
 
-    - name: shop-category-entertainment
+    - name: shop-category-tools
       priority: 13
+      items:
+        CraftChemicalCleaningKit: 12000
+
+    - name: shop-category-entertainment
+      priority: 14
       items:
         # Dices
         DiceBag: 20
@@ -459,9 +464,8 @@
         CardBin: 100
         PokerCardBin: 150
 
-
     - name: Smokables #explained using D&D lifestyle expenses
-      priority: 14
+      priority: 15
       items:
         CigPackBub: 250 #comfortable
         CigPackGreen: 150 #poor
@@ -473,7 +477,7 @@
         CigPackKosmos: 100 #squalid
 
     - name: Gardening
-      priority: 15
+      priority: 16
       items:
         HydroponicsToolScythe: 200
         HydroponicsToolMiniHoe: 70
