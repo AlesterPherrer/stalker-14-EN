@@ -319,6 +319,8 @@
       toggleable-clothing: !type:ContainerSlot {}
       storagebase: !type:Container
         ents: []
+  - type: Contraband # EN
+    severity: Monolith
   - type: PersonalDamage
     damage:
       types:

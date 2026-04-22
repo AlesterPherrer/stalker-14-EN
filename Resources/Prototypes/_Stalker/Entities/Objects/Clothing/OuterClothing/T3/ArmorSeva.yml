@@ -225,6 +225,8 @@
         Piercing: 0.80
         Compression: 0.95
         Psy: 0.7 # stalker EN change end
+  - type: Contraband # EN
+    severity: Monolith
   - type: GrantsArtifactSlots
     slots: 5 # EN
 

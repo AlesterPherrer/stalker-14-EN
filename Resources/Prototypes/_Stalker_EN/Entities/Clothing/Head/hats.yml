@@ -16,6 +16,8 @@
     damage:
       types:
         Radiation: 18.01
+  - type: Contraband
+    severity: Monolith
   - type: Craftable
 
 - type: entity

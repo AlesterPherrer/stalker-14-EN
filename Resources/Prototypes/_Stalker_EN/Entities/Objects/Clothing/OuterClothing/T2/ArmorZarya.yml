@@ -34,6 +34,8 @@
         Heat: 0.8
         Caustic: 0.85
         Shock: 0.9
+  - type: Contraband
+    severity: Monolith
   - type: GrantsArtifactSlots
     slots: 5
 

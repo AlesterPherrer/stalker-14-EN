@@ -272,6 +272,8 @@
     damage:
       types:
         Radiation: 18.01
+  - type: Contraband # EN
+    severity: Monolith
   - type: GrantsArtifactSlots
     slots: 4 # EN
 
