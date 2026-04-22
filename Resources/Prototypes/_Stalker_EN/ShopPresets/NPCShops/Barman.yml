@@ -370,6 +370,8 @@
         ClothingBeltHerbalistPouch: 450
         ClothingBeltWebbingHolsterStalkerZarya: 1000
         ClothingBeltCrafterStalker: 3000
+        StalkerGunCaseStandard: 1200 # im really not sure what a fair price is for these
+        #StalkerGunCaseDouble: 2550
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 9

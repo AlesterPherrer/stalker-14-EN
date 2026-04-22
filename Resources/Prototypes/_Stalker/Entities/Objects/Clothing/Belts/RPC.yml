@@ -370,7 +370,7 @@
   id: ClothingBeltWebbingHolsterMonolith
   name: поясная сумка с кобурой «Монолита»
   description: Поясной сумка из комплекта «Монолита» с пистолетной кобурой.
-  suffix: ST
+  suffix: ST, Radioactive
   components:
     - type: STWeight
       self: 3

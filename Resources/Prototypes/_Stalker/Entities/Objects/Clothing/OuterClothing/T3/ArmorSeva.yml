@@ -181,6 +181,7 @@
   id: ClothingOuterArmorSevaMonolith
   name: костюм "Сева" монолита
   description: Научный костюм, вариант «СЕВЫ», производимый монолитовцами.
+  suffix: ST, T2, Env, Radioactive
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/seva_monolith.rsi
