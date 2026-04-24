@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/21/2026 15:19:22
-  entityCount: 8147
+  time: 04/22/2026 21:05:24
+  entityCount: 8145
 maps:
 - 1
 grids:
@@ -23998,34 +23998,6 @@ entities:
     - type: Transform
       pos: -44.5,-137.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 6711
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-  - uid: 8140
-    components:
-    - type: Transform
-      pos: -56.5,-124.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 8141
-          - 8142
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: BookshelfStalker1
   entities:
   - uid: 3709
@@ -38174,24 +38146,6 @@ entities:
     - type: Transform
       pos: -48.5,-23.5
       parent: 1
-- proto: HydroponicsToolClippersStalker
-  entities:
-  - uid: 8141
-    components:
-    - type: Transform
-      parent: 8140
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: HydroponicsToolScytheStalker
-  entities:
-  - uid: 8142
-    components:
-    - type: Transform
-      parent: 8140
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: hydroponicsTray
   entities:
   - uid: 7156
@@ -39150,8 +39104,6 @@ entities:
       pos: -45.5,-106.5
       parent: 1
     - type: LinkedEntity
-      linkedEntities:
-      - invalid
 - proto: LocalTeleportEcoYantar
   entities:
   - uid: 6866
@@ -40732,6 +40684,18 @@ entities:
     components:
     - type: Transform
       pos: 61.494656,0.77776235
+      parent: 1
+- proto: PhoneInstrument
+  entities:
+  - uid: 6711
+    components:
+    - type: Transform
+      pos: -47.512207,-135.48274
+      parent: 1
+  - uid: 8140
+    components:
+    - type: Transform
+      pos: -51.531002,-110.49792
       parent: 1
 - proto: PhoneStalker
   entities:
@@ -42733,15 +42697,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -64.5,33.5
       parent: 1
-- proto: RubberStampScience
-  entities:
-  - uid: 6711
-    components:
-    - type: Transform
-      parent: 7246
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: sandbag
   entities:
   - uid: 2295
