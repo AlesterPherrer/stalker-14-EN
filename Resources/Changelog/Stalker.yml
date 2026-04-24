@@ -2691,5 +2691,65 @@
   id: 290
   time: '2026-04-21T05:00:47.604680+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/854
+- author: Wintoli
+  changes:
+  - message: Desert Eagle converted to .357 magnum with a slight bullet velocity increase.
+    type: Tweak
+  id: 291
+  time: '2026-04-21T18:22:35.175395+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/848
+- author: dallaszzz
+  changes:
+  - message: New muzzle smoke particles and muzzle flash sprite
+    type: Add
+  id: 292
+  time: '2026-04-21T21:59:46.317390+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/860
+- author: Vinny-Shick
+  changes:
+  - message: Standardised the results from crafting T0 through T3 ammo.
+    type: Add
+  id: 293
+  time: '2026-04-21T22:04:12.312878+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/834
+- author: Nox38
+  changes:
+  - message: Reverted Duty Sphere-08 helmet to its old look.
+    type: Tweak
+  id: 294
+  time: '2026-04-22T16:00:01.489809+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/857
+- author: teecoding
+  changes:
+  - message: Fixed PDA messenger sometimes sending DMs to the wrong chat as replies
+      to unrelated messages.
+    type: Fix
+  id: 295
+  time: '2026-04-22T21:43:28.914102+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/864
+- author: AlesterPherrer
+  changes:
+  - message: Fixed inconsistent artifact sale rates with Ecologists with the newer
+      artifacts
+    type: Tweak
+  id: 296
+  time: '2026-04-22T22:18:00.396524+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/865
+- author: TheOverwatchVoice
+  changes:
+  - message: added emission protection to Duty Meeting Room
+    type: Tweak
+  id: 297
+  time: '2026-04-23T12:44:18.738413+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/866
+- author: Daunter
+  changes:
+  - message: Badger "Petal" to neutral shop.
+    type: Add
+  - message: Gp-7 neutral gas mask sprite.
+    type: Tweak
+  id: 298
+  time: '2026-04-23T22:33:52.446651+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/871
 Name: Stalker
 Order: -1
