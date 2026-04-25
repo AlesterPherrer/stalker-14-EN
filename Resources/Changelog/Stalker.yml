@@ -2765,5 +2765,12 @@
   id: 300
   time: '2026-04-24T16:48:56.592432+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/873
+- author: A-Mimic1
+  changes:
+  - message: CS vendor ammo prices now closely match the new bar prices.
+    type: Add
+  id: 301
+  time: '2026-04-25T00:06:23.814490+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/870
 Name: Stalker
 Order: -1
