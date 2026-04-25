@@ -2791,5 +2791,12 @@
   id: 303
   time: '2026-04-25T22:01:03.450106+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/879
+- author: Mooringt, @altosnoew
+  changes:
+  - message: added neutral native armor skin, neutral poncho to neutral vendor
+    type: Add
+  id: 304
+  time: '2026-04-25T23:36:24.021944+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/868
 Name: Stalker
 Order: -1
