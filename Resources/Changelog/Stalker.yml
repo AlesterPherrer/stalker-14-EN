@@ -2798,5 +2798,12 @@
   id: 304
   time: '2026-04-25T23:36:24.021944+00:00'
   url: https://github.com/stalker-14-EN/stalker-14-EN/pull/868
+- author: Mooringt, altosnoew
+  changes:
+  - message: added military skin for East helmet
+    type: Add
+  id: 305
+  time: '2026-04-25T23:37:39.921166+00:00'
+  url: https://github.com/stalker-14-EN/stalker-14-EN/pull/878
 Name: Stalker
 Order: -1
